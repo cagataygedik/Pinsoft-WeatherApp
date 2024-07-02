@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PWFavoritesViewController: UIViewController {
+final class PWFavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

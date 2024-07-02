@@ -15,8 +15,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        testCoreDataInitialization()
         return true
     }
+    
+    func testCoreDataInitialization() {
+            let context = CoreDataStack.shared.context
+            let model = context.persistentStoreCoordinator?.managedObjectModel
+            
+            if let entities = model?.entities {
+                for entity in entities {
+                    print("Entity name: \(entity.name ?? "No name")")
+                }
+            } else {
+                print("No entities found in the model.")
+            }
+            
+            let fetchRequest: NSFetchRequest<WeatherEntity> = WeatherEntity.fetchRequest()
+            do {
+                let results = try context.fetch(fetchRequest)
+                print("Successfully fetched \(results.count) WeatherEntity records")
+            } catch {
+                print("Failed to fetch WeatherEntity: \(error)")
+            }
+        }
 
     // MARK: UISceneSession Lifecycle
 

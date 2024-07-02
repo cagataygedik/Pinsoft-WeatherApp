@@ -25,7 +25,7 @@ final class PWWeatherListViewController: UIViewController, UICollectionViewDataS
     
     private func configureViewController() {
         view.backgroundColor = .systemBackground
-        title = "Weather"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     private func setupSearchBar() {

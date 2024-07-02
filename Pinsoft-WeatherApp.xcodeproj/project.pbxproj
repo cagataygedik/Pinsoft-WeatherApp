@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113B2C33D86D000706BE /* AppDelegate.swift */; };
+		A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113D2C33D86D000706BE /* SceneDelegate.swift */; };
+		A25F11402C33D86D000706BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113F2C33D86D000706BE /* ViewController.swift */; };
+		A25F11432C33D86D000706BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25F11422C33D86D000706BE /* Base */; };
+		A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */; };
+		A25F11482C33D86E000706BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25F11472C33D86E000706BE /* Assets.xcassets */; };
+		A25F114B2C33D86E000706BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25F114A2C33D86E000706BE /* Base */; };
+		A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */; };
+		A25F11602C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */; };
+		A25F11622C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A25F11522C33D86E000706BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A25F11302C33D86D000706BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A25F11372C33D86D000706BE;
+			remoteInfo = "Pinsoft-WeatherApp";
+		};
+		A25F115C2C33D86E000706BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A25F11302C33D86D000706BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A25F11372C33D86D000706BE;
+			remoteInfo = "Pinsoft-WeatherApp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinsoft-WeatherApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25F113B2C33D86D000706BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A25F113D2C33D86D000706BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A25F113F2C33D86D000706BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A25F11422C33D86D000706BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A25F11452C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinsoft_WeatherApp.xcdatamodel; sourceTree = "<group>"; };
+		A25F11472C33D86E000706BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A25F114A2C33D86E000706BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A25F114C2C33D86E000706BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A25F11512C33D86E000706BE /* Pinsoft-WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinsoft-WeatherAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppTests.swift; sourceTree = "<group>"; };
+		A25F115B2C33D86E000706BE /* Pinsoft-WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinsoft-WeatherAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppUITests.swift; sourceTree = "<group>"; };
+		A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A25F11352C33D86D000706BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F114E2C33D86E000706BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F11582C33D86E000706BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A25F112F2C33D86D000706BE = {
+			isa = PBXGroup;
+			children = (
+				A25F113A2C33D86D000706BE /* Pinsoft-WeatherApp */,
+				A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */,
+				A25F115E2C33D86E000706BE /* Pinsoft-WeatherAppUITests */,
+				A25F11392C33D86D000706BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A25F11392C33D86D000706BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */,
+				A25F11512C33D86E000706BE /* Pinsoft-WeatherAppTests.xctest */,
+				A25F115B2C33D86E000706BE /* Pinsoft-WeatherAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A25F113A2C33D86D000706BE /* Pinsoft-WeatherApp */ = {
+			isa = PBXGroup;
+			children = (
+				A25F113B2C33D86D000706BE /* AppDelegate.swift */,
+				A25F113D2C33D86D000706BE /* SceneDelegate.swift */,
+				A25F113F2C33D86D000706BE /* ViewController.swift */,
+				A25F11412C33D86D000706BE /* Main.storyboard */,
+				A25F11472C33D86E000706BE /* Assets.xcassets */,
+				A25F11492C33D86E000706BE /* LaunchScreen.storyboard */,
+				A25F114C2C33D86E000706BE /* Info.plist */,
+				A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */,
+			);
+			path = "Pinsoft-WeatherApp";
+			sourceTree = "<group>";
+		};
+		A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */,
+			);
+			path = "Pinsoft-WeatherAppTests";
+			sourceTree = "<group>";
+		};
+		A25F115E2C33D86E000706BE /* Pinsoft-WeatherAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */,
+				A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */,
+			);
+			path = "Pinsoft-WeatherAppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A25F11372C33D86D000706BE /* Pinsoft-WeatherApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A25F11652C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherApp" */;
+			buildPhases = (
+				A25F11342C33D86D000706BE /* Sources */,
+				A25F11352C33D86D000706BE /* Frameworks */,
+				A25F11362C33D86D000706BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pinsoft-WeatherApp";
+			productName = "Pinsoft-WeatherApp";
+			productReference = A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A25F11502C33D86E000706BE /* Pinsoft-WeatherAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A25F11682C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppTests" */;
+			buildPhases = (
+				A25F114D2C33D86E000706BE /* Sources */,
+				A25F114E2C33D86E000706BE /* Frameworks */,
+				A25F114F2C33D86E000706BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A25F11532C33D86E000706BE /* PBXTargetDependency */,
+			);
+			name = "Pinsoft-WeatherAppTests";
+			productName = "Pinsoft-WeatherAppTests";
+			productReference = A25F11512C33D86E000706BE /* Pinsoft-WeatherAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A25F115A2C33D86E000706BE /* Pinsoft-WeatherAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A25F116B2C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppUITests" */;
+			buildPhases = (
+				A25F11572C33D86E000706BE /* Sources */,
+				A25F11582C33D86E000706BE /* Frameworks */,
+				A25F11592C33D86E000706BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A25F115D2C33D86E000706BE /* PBXTargetDependency */,
+			);
+			name = "Pinsoft-WeatherAppUITests";
+			productName = "Pinsoft-WeatherAppUITests";
+			productReference = A25F115B2C33D86E000706BE /* Pinsoft-WeatherAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A25F11302C33D86D000706BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					A25F11372C33D86D000706BE = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					A25F11502C33D86E000706BE = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A25F11372C33D86D000706BE;
+					};
+					A25F115A2C33D86E000706BE = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = A25F11372C33D86D000706BE;
+					};
+				};
+			};
+			buildConfigurationList = A25F11332C33D86D000706BE /* Build configuration list for PBXProject "Pinsoft-WeatherApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A25F112F2C33D86D000706BE;
+			productRefGroup = A25F11392C33D86D000706BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A25F11372C33D86D000706BE /* Pinsoft-WeatherApp */,
+				A25F11502C33D86E000706BE /* Pinsoft-WeatherAppTests */,
+				A25F115A2C33D86E000706BE /* Pinsoft-WeatherAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A25F11362C33D86D000706BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A25F11482C33D86E000706BE /* Assets.xcassets in Resources */,
+				A25F114B2C33D86E000706BE /* Base in Resources */,
+				A25F11432C33D86D000706BE /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F114F2C33D86E000706BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F11592C33D86E000706BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A25F11342C33D86D000706BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A25F11402C33D86D000706BE /* ViewController.swift in Sources */,
+				A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */,
+				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
+				A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F114D2C33D86E000706BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A25F11572C33D86E000706BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A25F11602C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift in Sources */,
+				A25F11622C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A25F11532C33D86E000706BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A25F11372C33D86D000706BE /* Pinsoft-WeatherApp */;
+			targetProxy = A25F11522C33D86E000706BE /* PBXContainerItemProxy */;
+		};
+		A25F115D2C33D86E000706BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A25F11372C33D86D000706BE /* Pinsoft-WeatherApp */;
+			targetProxy = A25F115C2C33D86E000706BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A25F11412C33D86D000706BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A25F11422C33D86D000706BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A25F11492C33D86E000706BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A25F114A2C33D86E000706BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A25F11632C33D86E000706BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A25F11642C33D86E000706BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A25F11662C33D86E000706BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pinsoft-WeatherApp/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A25F11672C33D86E000706BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Pinsoft-WeatherApp/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A25F11692C33D86E000706BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinsoft-WeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pinsoft-WeatherApp";
+			};
+			name = Debug;
+		};
+		A25F116A2C33D86E000706BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherAppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pinsoft-WeatherApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Pinsoft-WeatherApp";
+			};
+			name = Release;
+		};
+		A25F116C2C33D86E000706BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pinsoft-WeatherApp";
+			};
+			name = Debug;
+		};
+		A25F116D2C33D86E000706BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 79CS75S5DL;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherAppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Pinsoft-WeatherApp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A25F11332C33D86D000706BE /* Build configuration list for PBXProject "Pinsoft-WeatherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A25F11632C33D86E000706BE /* Debug */,
+				A25F11642C33D86E000706BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A25F11652C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A25F11662C33D86E000706BE /* Debug */,
+				A25F11672C33D86E000706BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A25F11682C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A25F11692C33D86E000706BE /* Debug */,
+				A25F116A2C33D86E000706BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A25F116B2C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A25F116C2C33D86E000706BE /* Debug */,
+				A25F116D2C33D86E000706BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A25F11452C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodel */,
+			);
+			currentVersion = A25F11452C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodel */;
+			path = Pinsoft_WeatherApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A25F11302C33D86D000706BE /* Project object */;
+}

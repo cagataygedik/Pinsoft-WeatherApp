@@ -10,13 +10,14 @@
 		A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113B2C33D86D000706BE /* AppDelegate.swift */; };
 		A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113D2C33D86D000706BE /* SceneDelegate.swift */; };
 		A25F11402C33D86D000706BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113F2C33D86D000706BE /* ViewController.swift */; };
-		A25F11432C33D86D000706BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25F11422C33D86D000706BE /* Base */; };
 		A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */; };
 		A25F11482C33D86E000706BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25F11472C33D86E000706BE /* Assets.xcassets */; };
 		A25F114B2C33D86E000706BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25F114A2C33D86E000706BE /* Base */; };
 		A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */; };
 		A25F11602C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */; };
 		A25F11622C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */; };
+		A25F11742C33D97A000706BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A25F11732C33D97A000706BE /* SnapKit */; };
+		A25F11772C33D9CC000706BE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A25F11762C33D9CC000706BE /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,6 @@
 		A25F113B2C33D86D000706BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A25F113D2C33D86D000706BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A25F113F2C33D86D000706BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A25F11422C33D86D000706BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A25F11452C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinsoft_WeatherApp.xcdatamodel; sourceTree = "<group>"; };
 		A25F11472C33D86E000706BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A25F114A2C33D86E000706BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25F11742C33D97A000706BE /* SnapKit in Frameworks */,
+				A25F11772C33D9CC000706BE /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +103,11 @@
 		A25F113A2C33D86D000706BE /* Pinsoft-WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				A25F113B2C33D86D000706BE /* AppDelegate.swift */,
-				A25F113D2C33D86D000706BE /* SceneDelegate.swift */,
+				A25F11712C33D926000706BE /* Model */,
+				A25F11702C33D921000706BE /* View */,
+				A25F116F2C33D911000706BE /* ViewModel */,
+				A25F116E2C33D900000706BE /* Resources */,
 				A25F113F2C33D86D000706BE /* ViewController.swift */,
-				A25F11412C33D86D000706BE /* Main.storyboard */,
-				A25F11472C33D86E000706BE /* Assets.xcassets */,
-				A25F11492C33D86E000706BE /* LaunchScreen.storyboard */,
 				A25F114C2C33D86E000706BE /* Info.plist */,
 				A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */,
 			);
@@ -130,6 +131,38 @@
 			path = "Pinsoft-WeatherAppUITests";
 			sourceTree = "<group>";
 		};
+		A25F116E2C33D900000706BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A25F113B2C33D86D000706BE /* AppDelegate.swift */,
+				A25F113D2C33D86D000706BE /* SceneDelegate.swift */,
+				A25F11472C33D86E000706BE /* Assets.xcassets */,
+				A25F11492C33D86E000706BE /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A25F116F2C33D911000706BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A25F11702C33D921000706BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A25F11712C33D926000706BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +179,10 @@
 			dependencies = (
 			);
 			name = "Pinsoft-WeatherApp";
+			packageProductDependencies = (
+				A25F11732C33D97A000706BE /* SnapKit */,
+				A25F11762C33D9CC000706BE /* Alamofire */,
+			);
 			productName = "Pinsoft-WeatherApp";
 			productReference = A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +255,10 @@
 				Base,
 			);
 			mainGroup = A25F112F2C33D86D000706BE;
+			packageReferences = (
+				A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */,
+				A25F11752C33D9CC000706BE /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A25F11392C33D86D000706BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +277,6 @@
 			files = (
 				A25F11482C33D86E000706BE /* Assets.xcassets in Resources */,
 				A25F114B2C33D86E000706BE /* Base in Resources */,
-				A25F11432C33D86D000706BE /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,14 +341,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		A25F11412C33D86D000706BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A25F11422C33D86D000706BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A25F11492C33D86E000706BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -451,9 +483,7 @@
 				INFOPLIST_FILE = "Pinsoft-WeatherApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,6 +491,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -479,9 +513,7 @@
 				INFOPLIST_FILE = "Pinsoft-WeatherApp/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +521,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -611,6 +647,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		A25F11752C33D9CC000706BE /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A25F11732C33D97A000706BE /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		A25F11762C33D9CC000706BE /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25F11752C33D9CC000706BE /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */ = {

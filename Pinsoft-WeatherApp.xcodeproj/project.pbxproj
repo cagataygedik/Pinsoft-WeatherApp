@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */; };
+		A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */; };
+		A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B932C358B86001AE115 /* PWLabel.swift */; };
+		A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B962C358E19001AE115 /* PWImageView.swift */; };
+		A21D2B9A2C3594EA001AE115 /* PWStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B992C3594EA001AE115 /* PWStackView.swift */; };
 		A249D39A2C33F8DA00E65163 /* WeatherEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */; };
 		A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113B2C33D86D000706BE /* AppDelegate.swift */; };
 		A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113D2C33D86D000706BE /* SceneDelegate.swift */; };
@@ -56,6 +60,10 @@
 
 /* Begin PBXFileReference section */
 		A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
+		A21D2B932C358B86001AE115 /* PWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWLabel.swift; sourceTree = "<group>"; };
+		A21D2B962C358E19001AE115 /* PWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWImageView.swift; sourceTree = "<group>"; };
+		A21D2B992C3594EA001AE115 /* PWStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWStackView.swift; sourceTree = "<group>"; };
 		A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Extension.swift"; sourceTree = "<group>"; };
 		A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinsoft-WeatherApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25F113B2C33D86D000706BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +122,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A21D2B912C358B68001AE115 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				A21D2B982C3594C3001AE115 /* UIStackView */,
+				A21D2B952C358E02001AE115 /* UIImageView */,
+				A21D2B922C358B71001AE115 /* UILabel */,
+				A287A0262C35227A009D2726 /* UIView */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		A21D2B922C358B71001AE115 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				A21D2B932C358B86001AE115 /* PWLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		A21D2B952C358E02001AE115 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				A21D2B962C358E19001AE115 /* PWImageView.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		A21D2B982C3594C3001AE115 /* UIStackView */ = {
+			isa = PBXGroup;
+			children = (
+				A21D2B992C3594EA001AE115 /* PWStackView.swift */,
+			);
+			path = UIStackView;
+			sourceTree = "<group>";
+		};
 		A249D3972C33F73200E65163 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +253,7 @@
 		A25F11702C33D921000706BE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A287A0262C35227A009D2726 /* UIViews */,
+				A21D2B912C358B68001AE115 /* ReusableViews */,
 				A25F11822C33E843000706BE /* Cells */,
 				A25F11792C33DDBC000706BE /* Controllers */,
 			);
@@ -223,6 +266,7 @@
 				A25F11872C33E8A9000706BE /* Weather.swift */,
 				A25F11892C33E8B7000706BE /* CoreDataStack.swift */,
 				A25F118D2C33E97A000706BE /* Forecast.swift */,
+				A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,12 +314,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		A287A0262C35227A009D2726 /* UIViews */ = {
+		A287A0262C35227A009D2726 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
 				A287A0242C352276009D2726 /* PWForecastView.swift */,
 			);
-			path = UIViews;
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		A2F28D932C34121500493115 /* Favorites */ = {
@@ -433,13 +477,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */,
+				A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */,
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
 				A25F118C2C33E8C5000706BE /* WeatherService.swift in Sources */,
+				A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */,
 				A25F117F2C33DE3D000706BE /* PWWeatherListViewController.swift in Sources */,
 				A287A0252C352276009D2726 /* PWForecastView.swift in Sources */,
 				A25F118E2C33E97A000706BE /* Forecast.swift in Sources */,
 				A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */,
 				A25F11882C33E8A9000706BE /* Weather.swift in Sources */,
+				A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */,
 				A25F118A2C33E8B7000706BE /* CoreDataStack.swift in Sources */,
 				A25F117B2C33DDE9000706BE /* PWTabBarController.swift in Sources */,
 				A25F11862C33E87D000706BE /* PWWeatherCell.swift in Sources */,
@@ -451,6 +498,7 @@
 				A25F11B62C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift in Sources */,
 				A25F11812C33DE78000706BE /* PWFavoritesViewController.swift in Sources */,
 				A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */,
+				A21D2B9A2C3594EA001AE115 /* PWStackView.swift in Sources */,
 				A249D39A2C33F8DA00E65163 /* WeatherEntity+Extension.swift in Sources */,
 				A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */,
 			);

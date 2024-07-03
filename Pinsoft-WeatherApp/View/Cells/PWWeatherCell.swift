@@ -11,86 +11,24 @@ import SnapKit
 final class PWWeatherCell: UICollectionViewCell {
     static let identifier = "PWWeatherCell"
     
-    private let cityLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
-        label.numberOfLines = 1
-        return label
-    }()
+    private let cityLabel = PWLabel(textAlignment: .left, fontSize: 20, fontWeight: .semibold)
+    private let countryLabel = PWLabel(textAlignment: .left, fontSize: 18, fontWeight: .medium)
+    private let humidityLabel = PWLabel(textAlignment: .left, fontSize: 16, fontWeight: .light)
+    private let temperatureLabel = PWLabel(textAlignment: .right, fontSize: 20, fontWeight: .semibold)
+    private let descriptionLabel = PWLabel(textAlignment: .right, fontSize: 18, fontWeight: .medium)
+    private let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    private let countryLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.numberOfLines = 1
-        return label
-    }()
+    private let humidityImageView = PWImageView(systemName: "humidity")
+    private let temperatureImageView = PWImageView(systemName: "thermometer.medium")
+    private let windSpeedImageView = PWImageView(systemName: "wind")
     
-    private let humidityLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .light)
-        label.numberOfLines = 1
-        return label
-    }()
+    private let humidityStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
+    private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
+    private let windSpeedStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
+    private let leftStackView = PWStackView(axis: .vertical, alignment: .leading, distribution: .equalSpacing, spacing: 16)
+    private let rightStackView = PWStackView(axis: .vertical, alignment: .trailing, distribution: .equalSpacing, spacing: 16)
+    private let mainStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .fillEqually, spacing: 16)
     
-    private let temperatureLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
-        label.numberOfLines = 1
-        label.textAlignment = .right
-        return label
-    }()
-    
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.numberOfLines = 1
-        label.textAlignment = .right
-        return label
-    }()
-    
-    private let windSpeedLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .light)
-        label.numberOfLines = 1
-        label.textAlignment = .right
-        return label
-    }()
-    
-    private let leftStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .leading
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 16
-        return stackView
-    }()
-    
-    private let rightStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .trailing
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 16
-        return stackView
-    }()
-    
-    private let mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.distribution = .fillEqually
-        stackView.spacing = 16
-        return stackView
-    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -111,13 +49,22 @@ final class PWWeatherCell: UICollectionViewCell {
     }
     
     private func addSubviews() {
+        humidityStackView.addArrangedSubview(humidityImageView)
+        humidityStackView.addArrangedSubview(humidityLabel)
+        
+        windSpeedStackView.addArrangedSubview(windSpeedImageView)
+        windSpeedStackView.addArrangedSubview(windSpeedLabel)
+        
+        temperatureStackView.addArrangedSubview(temperatureImageView)
+        temperatureStackView.addArrangedSubview(temperatureLabel)
+        
         leftStackView.addArrangedSubview(cityLabel)
         leftStackView.addArrangedSubview(countryLabel)
-        leftStackView.addArrangedSubview(humidityLabel)
+        leftStackView.addArrangedSubview(humidityStackView)
         
-        rightStackView.addArrangedSubview(temperatureLabel)
+        rightStackView.addArrangedSubview(temperatureStackView)
         rightStackView.addArrangedSubview(descriptionLabel)
-        rightStackView.addArrangedSubview(windSpeedLabel)
+        rightStackView.addArrangedSubview(windSpeedStackView)
         
         mainStackView.addArrangedSubview(leftStackView)
         mainStackView.addArrangedSubview(rightStackView)
@@ -127,7 +74,7 @@ final class PWWeatherCell: UICollectionViewCell {
     
     private func setupConstraints() {
         mainStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(5)
+            make.edges.equalToSuperview().inset(12)
         }
     }
     
@@ -146,7 +93,7 @@ final class PWWeatherCell: UICollectionViewCell {
         countryLabel.text = weather.country
         temperatureLabel.text = "\(weather.temperature)°C"
         descriptionLabel.text = weather.weatherDescription
-        humidityLabel.text = "Humudity: \(weather.humidity)%"
-        windSpeedLabel.text = "Wind Speed: \(weather.windSpeed)KM/H"
+        humidityLabel.text = "\(weather.humidity)%"
+        windSpeedLabel.text = "\(weather.windSpeed)KM/H"
     }
 }

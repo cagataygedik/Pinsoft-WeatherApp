@@ -31,6 +31,7 @@
 		A25F11B42C33F66B000706BE /* WeatherEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11B02C33F66B000706BE /* WeatherEntity+CoreDataProperties.swift */; };
 		A25F11B52C33F66B000706BE /* ForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11B12C33F66B000706BE /* ForecastEntity+CoreDataClass.swift */; };
 		A25F11B62C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11B22C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift */; };
+		A287A0252C352276009D2726 /* PWForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A287A0242C352276009D2726 /* PWForecastView.swift */; };
 		A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */; };
 		A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		A25F11B02C33F66B000706BE /* WeatherEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A25F11B12C33F66B000706BE /* ForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A25F11B22C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A287A0242C352276009D2726 /* PWForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWForecastView.swift; sourceTree = "<group>"; };
 		A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModel.swift; sourceTree = "<group>"; };
 		A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,6 +207,7 @@
 		A25F11702C33D921000706BE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A287A0262C35227A009D2726 /* UIViews */,
 				A25F11822C33E843000706BE /* Cells */,
 				A25F11792C33DDBC000706BE /* Controllers */,
 			);
@@ -262,6 +265,14 @@
 				A25F11852C33E87D000706BE /* PWWeatherCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		A287A0262C35227A009D2726 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				A287A0242C352276009D2726 /* PWForecastView.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 		A2F28D932C34121500493115 /* Favorites */ = {
@@ -422,6 +433,7 @@
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
 				A25F118C2C33E8C5000706BE /* WeatherService.swift in Sources */,
 				A25F117F2C33DE3D000706BE /* PWWeatherListViewController.swift in Sources */,
+				A287A0252C352276009D2726 /* PWForecastView.swift in Sources */,
 				A25F118E2C33E97A000706BE /* Forecast.swift in Sources */,
 				A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */,
 				A25F11882C33E8A9000706BE /* Weather.swift in Sources */,

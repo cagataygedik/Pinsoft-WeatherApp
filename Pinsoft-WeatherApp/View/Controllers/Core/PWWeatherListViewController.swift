@@ -52,8 +52,9 @@ final class PWWeatherListViewController: UIViewController, UICollectionViewDataS
         view.addSubview(collectionView)
         
         collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
-            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
         }
     }
     
@@ -72,7 +73,7 @@ final class PWWeatherListViewController: UIViewController, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let weather = viewModel.filteredWeatherData[indexPath.item]
-        let detailVC = PWWeatherDetailViewController()
+        let detailVC = PWWeatherDetailViewController(weather: weather)
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

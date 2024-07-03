@@ -21,6 +21,7 @@ final class PWWeatherListViewController: UIViewController, UICollectionViewDataS
             self?.collectionView.reloadData()
         }
         viewModel.fetchWeather()
+        hideKeyboardWhenTappedAround()
     }
     
     private func configureViewController() {
@@ -31,6 +32,7 @@ final class PWWeatherListViewController: UIViewController, UICollectionViewDataS
     private func setupSearchBar() {
         searchBar = UISearchBar()
         searchBar.delegate = self
+        searchBar.placeholder = "Search for a city"
         view.addSubview(searchBar)
         
         searchBar.snp.makeConstraints { make in

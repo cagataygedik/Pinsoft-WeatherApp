@@ -26,6 +26,7 @@ extension WeatherEntity {
     @NSManaged public var humidity: Int64
     @NSManaged public var windSpeed: Double
     @NSManaged public var forecast: NSSet?
+    @NSManaged public var isFavorite: Bool
 
 }
 

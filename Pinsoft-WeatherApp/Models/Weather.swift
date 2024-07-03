@@ -18,10 +18,11 @@ struct Weather: Codable {
     let humidity: Int
     let windSpeed: Double
     let forecast: [Forecast]
+    var isFavorite: Bool
     
     enum CodingKeys: String, CodingKey {
         case id, city, country, latitude, longitude, temperature
         case weatherDescription = "weather_description"
-        case humidity, windSpeed = "wind_speed", forecast
+        case humidity, windSpeed = "wind_speed", forecast, isFavorite
     }
 }

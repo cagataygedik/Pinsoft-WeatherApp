@@ -13,7 +13,7 @@ extension WeatherEntity {
         if let forecastEntities = self.forecast?.allObjects as? [ForecastEntity] {
             forecastList = forecastEntities.map { $0.toForecast() }
         }
-        return Weather(id: Int(self.id), city: self.city ?? "", country: self.country ?? "", latitude: self.latitude, longitude: self.longitude, temperature: self.temperature, weatherDescription: self.weatherDescription ?? "", humidity: Int(self.humidity), windSpeed: self.windSpeed, forecast: forecastList)
+        return Weather(id: Int(self.id), city: self.city ?? "", country: self.country ?? "", latitude: self.latitude, longitude: self.longitude, temperature: self.temperature, weatherDescription: self.weatherDescription ?? "", humidity: Int(self.humidity), windSpeed: self.windSpeed, forecast: forecastList, isFavorite: self.isFavorite)
     }
 }
 

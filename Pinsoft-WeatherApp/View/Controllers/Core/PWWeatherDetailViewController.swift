@@ -107,15 +107,33 @@ final class PWWeatherDetailViewController: UIViewController {
     }
     
     private func setupNavigationBar() {
-        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(addToFavorites))
+        let favoriteButton = UIBarButtonItem(image: UIImage(systemName: isFavorite() ? "star.fill" : "star"), style: .plain, target: self, action: #selector(toggleFavorite))
         navigationItem.rightBarButtonItem = favoriteButton
     }
     
-    @objc private func addToFavorites() {
-        
-        let alert = UIAlertController(title: "Added to favorites", message: "\(weather.city) has been added to your favorites", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Great", style: .default))
-        present(alert, animated: true)
+    @objc private func toggleFavorite() {
+        weather.isFavorite.toggle()
+        if weather.isFavorite {
+            PWFavoritesViewModel.shared.removeFavorite(weather)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star")
+            showAlert(title: "Removed from favorites", message: "\(weather.city) has been removed from favorites")
+        } else {
+            PWFavoritesViewModel.shared.addFavorite(weather)
+            navigationItem.rightBarButtonItem?.image = UIImage(systemName: "star.fill")
+            showAlert(title: "Added to favorites", message: "\(weather.city) has been added to favorites")
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("FavoritesUpdated"), object: nil)
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func isFavorite() -> Bool {
+        return PWFavoritesViewModel.shared.isFavorite(weather)
     }
     
     private func addSubviews() {

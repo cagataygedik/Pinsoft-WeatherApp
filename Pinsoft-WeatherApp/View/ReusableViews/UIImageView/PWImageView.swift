@@ -20,7 +20,7 @@ class PWImageView: UIImageView {
     
     convenience init(systemName: String) {
         self.init(frame: .zero)
-        self.image = UIImage(systemName: systemName)
+        setSymbolImage(systemName: systemName)
     }
     
     private func configure() {

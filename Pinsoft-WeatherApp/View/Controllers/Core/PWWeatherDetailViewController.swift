@@ -18,9 +18,9 @@ final class PWWeatherDetailViewController: UIViewController {
     private let humidityLabel = PWLabel(textAlignment: .left, fontSize: 16, fontWeight: .light)
     private let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    private let temperatureImageView = PWImageView(systemName: "thermometer.medium")
+    private let temperatureImageView = PWImageView(systemName: "thermometer.high")
     private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
-    private let humidityImageView = PWImageView(systemName: "humidity")
+    private let humidityImageView = PWImageView(systemName: "humidity.fill")
     private let windSpeedImageView = PWImageView(systemName: "wind")
     
     private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
@@ -140,7 +140,7 @@ final class PWWeatherDetailViewController: UIViewController {
         }
         
         if let weatherDescription = WeatherDescription(rawValue: weather.weatherDescription) {
-            weatherDescriptionImageView.image = UIImage(systemName: weatherDescription.imageName)
+            weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
         }
     }
 }

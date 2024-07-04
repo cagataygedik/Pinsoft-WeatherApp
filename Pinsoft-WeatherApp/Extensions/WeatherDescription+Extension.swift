@@ -11,23 +11,23 @@ extension WeatherDescription {
     var imageName: String {
         switch self {
         case .clearSky:
-            return "sun.min"
+            return "sun.max.fill"
         case .cloudy:
-            return "cloud"
+            return "cloud.fill"
         case .partlyCloudy:
-            return "cloud.sun"
+            return "cloud.sun.fill"
         case .rain:
-            return "cloud.rain"
+            return "cloud.rain.fill"
         case .rainShowers:
-            return "cloud.heavyrain"
+            return "cloud.heavyrain.fill"
         case .rainy:
-            return "cloud.drizzle"
+            return "cloud.drizzle.fill"
         case .scatteredClouds:
-            return "cloud.bolt"
+            return "cloud.bolt.fill"
         case .sunny:
-            return "sun.max"
+            return "sun.max.fill"
         case .weatherDescriptionPartlyCloudy:
-            return "cloud.sun"
+            return "cloud.sun.fill"
         }
     }
 }

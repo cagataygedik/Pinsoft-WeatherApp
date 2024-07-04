@@ -18,8 +18,8 @@ final class PWWeatherCell: UICollectionViewCell {
     private let weatherDescriptionLabel = PWLabel(textAlignment: .right, fontSize: 18, fontWeight: .medium)
     private let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    private let humidityImageView = PWImageView(systemName: "humidity")
-    private let temperatureImageView = PWImageView(systemName: "thermometer.medium")
+    private let humidityImageView = PWImageView(systemName: "humidity.fill")
+    private let temperatureImageView = PWImageView(systemName: "thermometer.high")
     private let windSpeedImageView = PWImageView(systemName: "wind")
     private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
     
@@ -102,7 +102,7 @@ final class PWWeatherCell: UICollectionViewCell {
         windSpeedLabel.text = "\(weather.windSpeed)KM/H"
         
         if let weatherDescription = WeatherDescription(rawValue: weather.weatherDescription) {
-            weatherDescriptionImageView.image = UIImage(systemName: weatherDescription.imageName)
+            weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
         }
     }
 }

@@ -14,8 +14,10 @@ final class PWForecastView: UIView {
     private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .regular)
     
     private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
+    private let temperatureImageView = PWImageView(systemName: "thermometer.high")
     
     private let weatherDescriptionStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 2)
+    private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 2)
     private let mainStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)
     
     override init(frame: CGRect) {
@@ -42,9 +44,12 @@ final class PWForecastView: UIView {
         weatherDescriptionStackView.addArrangedSubview(weatherDescriptionImageView)
         weatherDescriptionStackView.addArrangedSubview(weatherDescriptionLabel)
         
+        temperatureStackView.addArrangedSubview(temperatureImageView)
+        temperatureStackView.addArrangedSubview(temperatureLabel)
+        
         mainStackView.addArrangedSubview(dayLabel)
         mainStackView.addArrangedSubview(weatherDescriptionStackView)
-        mainStackView.addArrangedSubview(temperatureLabel)
+        mainStackView.addArrangedSubview(temperatureStackView)
     }
     
     private func setupConstraints() {
@@ -58,8 +63,8 @@ final class PWForecastView: UIView {
         weatherDescriptionLabel.text = description
         temperatureLabel.text = temperature
         
-        if let weatherDesciption = WeatherDescription(rawValue: description) {
-            weatherDescriptionImageView.image = UIImage(systemName: weatherDesciption.imageName)
+        if let weatherDescription = WeatherDescription(rawValue: description) {
+            weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
         }
     }
 }

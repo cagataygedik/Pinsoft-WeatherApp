@@ -8,15 +8,20 @@
 import UIKit
 
 final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating, PWFavoritesViewDelegate {
-    private var favoritesView: PWFavoritesView!
-    private var searchController: UISearchController!
+    private var favoritesView = PWFavoritesView()
+    private var searchController = UISearchController()
+    private var viewModel = PWFavoritesViewModel.shared
+    
+    override func loadView() {
+        view = favoritesView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        setupFavoritesView()
         setupSearchController()
-        hideKeyboardWhenTappedAround()
+        setupFavoritesView()
+        setupViewModel()
     }
     
     private func configureViewController() {
@@ -34,18 +39,23 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
     }
     
     private func setupFavoritesView() {
-        favoritesView = PWFavoritesView()
+        favoritesView.collectionView.dataSource = self
+        favoritesView.collectionView.delegate = self
         favoritesView.delegate = self
-        view.addSubview(favoritesView)
-        favoritesView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
+    }
+    
+    private func setupViewModel() {
+        viewModel.updateUI = { [weak self] in
+            DispatchQueue.main.async {
+                self?.favoritesView.collectionView.reloadData()
+            }
         }
+        viewModel.loadFavorites()
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        favoritesView.filterFavorites(by: searchText)
+        viewModel.filterFavorites(by: searchText)
         UIView.transition(with: favoritesView.collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
             self.favoritesView.collectionView.reloadData()
         }, completion: nil)
@@ -56,3 +66,27 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
+
+extension PWFavoritesViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.filteredFavorites.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
+            return UICollectionViewCell()
+        }
+        let weather = viewModel.filteredFavorites[indexPath.item]
+        cell.configure(with: weather)
+        return cell
+    }
+}
+
+extension PWFavoritesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let weather = viewModel.filteredFavorites[indexPath.item]
+        didSelectWeather(weather)
+    }
+}
+
+

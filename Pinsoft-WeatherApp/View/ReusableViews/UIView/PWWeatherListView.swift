@@ -13,16 +13,11 @@ protocol PWWeatherListViewDelegate: AnyObject {
 
 final class PWWeatherListView: UIView {
     var collectionView: UICollectionView!
-    private var viewModel: PWWeatherListViewModel = PWWeatherListViewModel()
     weak var delegate: PWWeatherListViewDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupCollectionView()
-        viewModel.updateUI = { [weak self] in
-            self?.collectionView.reloadData()
-        }
-        viewModel.fetchWeather()
     }
 
     required init?(coder: NSCoder) {
@@ -35,8 +30,6 @@ final class PWWeatherListView: UIView {
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width - 16, height: 120)
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         addSubview(collectionView)
-        collectionView.dataSource = self
-        collectionView.delegate = self
         collectionView.backgroundColor = .systemBackground
         collectionView.register(PWWeatherCell.self, forCellWithReuseIdentifier: PWWeatherCell.identifier)
         
@@ -44,31 +37,6 @@ final class PWWeatherListView: UIView {
             make.edges.equalToSuperview()
         }
     }
-
-    func filterWeather(by searchText: String) {
-        viewModel.filterWeather(by: searchText)
-    }
 }
 
-extension PWWeatherListView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.filteredWeatherData.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
-            return UICollectionViewCell()
-        }
-        let weather = viewModel.filteredWeatherData[indexPath.item]
-        cell.configure(with: weather)
-        return cell
-    }
-}
-
-extension PWWeatherListView: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weather = viewModel.filteredWeatherData[indexPath.item]
-        delegate?.didSelectWeather(weather)
-    }
-}
 

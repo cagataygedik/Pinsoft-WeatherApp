@@ -9,39 +9,10 @@ import UIKit
 
 final class PWForecastView: UIView {
     
-    private let dayLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .semibold)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let temperatureLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 16, weight: .regular)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 5
-        return stackView
-    }()
+    private let dayLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .semibold)
+    private let descriptionLabel = PWLabel(textAlignment: .center, fontSize: 14, fontWeight: .regular)
+    private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .regular)
+    private let stackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

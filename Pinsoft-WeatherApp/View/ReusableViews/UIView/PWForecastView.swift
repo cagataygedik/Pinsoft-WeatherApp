@@ -34,7 +34,7 @@ final class PWForecastView: UIView {
     private func setupView() {
         backgroundColor = .systemBackground
         layer.cornerRadius = 8
-        layer.borderColor = UIColor.systemCyan.cgColor
+        layer.borderColor = UIColor.white.cgColor
         layer.borderWidth = 2
     }
     
@@ -65,6 +65,7 @@ final class PWForecastView: UIView {
         
         if let weatherDescription = WeatherDescription(rawValue: description) {
             weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
+            backgroundColor = weatherDescription.backgroundColor
         }
     }
 }

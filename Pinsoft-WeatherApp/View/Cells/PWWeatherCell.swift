@@ -46,7 +46,7 @@ final class PWWeatherCell: UICollectionViewCell {
     private func setupLayer() {
         contentView.backgroundColor = .systemBackground
         contentView.layer.cornerRadius = 8
-        contentView.layer.borderColor = UIColor.systemCyan.cgColor
+        contentView.layer.borderColor = UIColor.clear.cgColor
         contentView.layer.borderWidth = 2
     }
     
@@ -103,6 +103,7 @@ final class PWWeatherCell: UICollectionViewCell {
         
         if let weatherDescription = WeatherDescription(rawValue: weather.weatherDescription) {
             weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
+            contentView.backgroundColor = weatherDescription.backgroundColor
         }
     }
 }

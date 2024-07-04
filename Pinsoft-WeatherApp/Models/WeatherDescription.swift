@@ -5,7 +5,7 @@
 //  Created by Celil Çağatay Gedik on 3.07.2024.
 //
 
-import Foundation
+import UIKit
 
 public enum WeatherDescription: String, Equatable, Codable {
     case clearSky = "Clear sky"
@@ -17,4 +17,17 @@ public enum WeatherDescription: String, Equatable, Codable {
     case scatteredClouds = "Scattered clouds"
     case sunny = "Sunny"
     case weatherDescriptionPartlyCloudy = "Partly Cloudy"
+    
+    var backgroundColor: UIColor {
+        switch self {
+        case .clearSky, .partlyCloudy, .weatherDescriptionPartlyCloudy:
+            return Constants.lightBlueColor!
+        case .cloudy:
+            return Constants.lightGrayColor!
+        case .rain, .rainShowers, .rainy, .scatteredClouds:
+            return Constants.darkGrayColor!
+        case .sunny:
+            return Constants.lightYellowColor!
+        }
+    }
 }

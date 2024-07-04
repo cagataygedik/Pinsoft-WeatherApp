@@ -15,6 +15,9 @@
 		A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */; };
 		A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */; };
 		A2310CF02C369958009BFF06 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */; };
+		A2310CF32C36C0F9009BFF06 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CF22C36C0F9009BFF06 /* Constants.swift */; };
+		A2310CF62C36D42C009BFF06 /* PWWeatherListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CF52C36D42C009BFF06 /* PWWeatherListView.swift */; };
+		A2310CF82C36DBDD009BFF06 /* PWFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CF72C36DBDD009BFF06 /* PWFavoritesView.swift */; };
 		A249D39A2C33F8DA00E65163 /* WeatherEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */; };
 		A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113B2C33D86D000706BE /* AppDelegate.swift */; };
 		A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113D2C33D86D000706BE /* SceneDelegate.swift */; };
@@ -70,6 +73,9 @@
 		A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDescription+Extension.swift"; sourceTree = "<group>"; };
 		A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		A2310CF22C36C0F9009BFF06 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2310CF52C36D42C009BFF06 /* PWWeatherListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListView.swift; sourceTree = "<group>"; };
+		A2310CF72C36DBDD009BFF06 /* PWFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesView.swift; sourceTree = "<group>"; };
 		A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Extension.swift"; sourceTree = "<group>"; };
 		A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinsoft-WeatherApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25F113B2C33D86D000706BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				A25F113D2C33D86D000706BE /* SceneDelegate.swift */,
 				A25F11472C33D86E000706BE /* Assets.xcassets */,
 				A25F11492C33D86E000706BE /* LaunchScreen.storyboard */,
+				A2310CF22C36C0F9009BFF06 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -327,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				A287A0242C352276009D2726 /* PWForecastView.swift */,
+				A2310CF52C36D42C009BFF06 /* PWWeatherListView.swift */,
+				A2310CF72C36DBDD009BFF06 /* PWFavoritesView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -489,7 +498,9 @@
 				A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */,
 				A2310CF02C369958009BFF06 /* UIImageView+Extension.swift in Sources */,
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
+				A2310CF62C36D42C009BFF06 /* PWWeatherListView.swift in Sources */,
 				A25F118C2C33E8C5000706BE /* WeatherService.swift in Sources */,
+				A2310CF32C36C0F9009BFF06 /* Constants.swift in Sources */,
 				A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */,
 				A25F117F2C33DE3D000706BE /* PWWeatherListViewController.swift in Sources */,
 				A287A0252C352276009D2726 /* PWForecastView.swift in Sources */,
@@ -498,6 +509,7 @@
 				A25F11882C33E8A9000706BE /* Weather.swift in Sources */,
 				A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */,
 				A25F118A2C33E8B7000706BE /* CoreDataStack.swift in Sources */,
+				A2310CF82C36DBDD009BFF06 /* PWFavoritesView.swift in Sources */,
 				A25F117B2C33DDE9000706BE /* PWTabBarController.swift in Sources */,
 				A25F11862C33E87D000706BE /* PWWeatherCell.swift in Sources */,
 				A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */,

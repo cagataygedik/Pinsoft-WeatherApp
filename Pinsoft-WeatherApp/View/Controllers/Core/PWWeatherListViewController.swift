@@ -7,88 +7,54 @@
 
 import UIKit
 
-final class PWWeatherListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
-    private var searchBar: UISearchBar!
-    private var collectionView: UICollectionView!
-    private var viewModel: PWWeatherListViewModel = PWWeatherListViewModel()
-    
+import UIKit
+
+final class PWWeatherListViewController: UIViewController, UISearchResultsUpdating, PWWeatherListViewDelegate {
+    private var weatherListView: PWWeatherListView!
+    private var searchController: UISearchController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
-        setupSearchBar()
-        configureCollectionView()
-        viewModel.updateUI = { [weak self] in
-            self?.collectionView.reloadData()
-        }
-        viewModel.fetchWeather()
+        setupSearchController()
+        setupWeatherListView()
         hideKeyboardWhenTappedAround()
     }
-    
+
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
-    
-    private func setupSearchBar() {
-        searchBar = UISearchBar()
-        searchBar.delegate = self
-        searchBar.placeholder = "Search for a city"
-        view.addSubview(searchBar)
-        
-        searchBar.snp.makeConstraints { make in
+
+    private func setupSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a city"
+        navigationItem.searchController = searchController
+    }
+
+    private func setupWeatherListView() {
+        weatherListView = PWWeatherListView()
+        weatherListView.delegate = self
+        view.addSubview(weatherListView)
+        weatherListView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(50)
+            make.left.right.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
-    
-    private func configureCollectionView() {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        layout.itemSize = CGSize(width: view.frame.size.width - 16, height: 120)
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(PWWeatherCell.self, forCellWithReuseIdentifier: PWWeatherCell.identifier)
-        collectionView.backgroundColor = .systemBackground
-        view.addSubview(collectionView)
-        
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(10)
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-        }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        weatherListView.filterWeather(by: searchText)
+        UIView.transition(with: weatherListView.collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.weatherListView.collectionView.reloadData()
+        }, completion: nil)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.filteredWeatherData.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
-            return UICollectionViewCell()
-        }
-        let weather = viewModel.filteredWeatherData[indexPath.item]
-        cell.configure(with: weather)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weather = viewModel.filteredWeatherData[indexPath.item]
+
+    func didSelectWeather(_ weather: Weather) {
         let detailVC = PWWeatherDetailViewController(weather: weather)
         navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        viewModel.filterWeather(by: searchText)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if offsetY > contentHeight - scrollView.frame.height * 2 {
-            viewModel.fetchNextPage()
-        }
     }
 }

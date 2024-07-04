@@ -141,6 +141,7 @@ final class PWWeatherDetailViewController: UIViewController {
         
         if let weatherDescription = WeatherDescription(rawValue: weather.weatherDescription) {
             weatherDescriptionImageView.setSymbolImage(systemName: weatherDescription.imageName)
+            view.backgroundColor = weatherDescription.backgroundColor
         }
     }
 }

@@ -10,9 +10,13 @@ import UIKit
 final class PWForecastView: UIView {
     
     private let dayLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .semibold)
-    private let descriptionLabel = PWLabel(textAlignment: .center, fontSize: 14, fontWeight: .regular)
+    private let weatherDescriptionLabel = PWLabel(textAlignment: .center, fontSize: 14, fontWeight: .regular)
     private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .regular)
-    private let stackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)
+    
+    private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
+    
+    private let weatherDescriptionStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 2)
+    private let mainStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,21 +37,29 @@ final class PWForecastView: UIView {
     }
     
     private func addSubviews() {
-        addSubview(stackView)
-        stackView.addArrangedSubview(dayLabel)
-        stackView.addArrangedSubview(descriptionLabel)
-        stackView.addArrangedSubview(temperatureLabel)
+        addSubview(mainStackView)
+        
+        weatherDescriptionStackView.addArrangedSubview(weatherDescriptionImageView)
+        weatherDescriptionStackView.addArrangedSubview(weatherDescriptionLabel)
+        
+        mainStackView.addArrangedSubview(dayLabel)
+        mainStackView.addArrangedSubview(weatherDescriptionStackView)
+        mainStackView.addArrangedSubview(temperatureLabel)
     }
     
     private func setupConstraints() {
-        stackView.snp.makeConstraints { make in
+        mainStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(10)
         }
     }
     
     func configure(day: String, description: String, temperature: String) {
         dayLabel.text = day
-        descriptionLabel.text = description
+        weatherDescriptionLabel.text = description
         temperatureLabel.text = temperature
+        
+        if let weatherDesciption = WeatherDescription(rawValue: description) {
+            weatherDescriptionImageView.image = UIImage(systemName: weatherDesciption.imageName)
+        }
     }
 }

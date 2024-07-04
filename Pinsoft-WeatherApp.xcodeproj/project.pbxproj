@@ -13,6 +13,7 @@
 		A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B962C358E19001AE115 /* PWImageView.swift */; };
 		A21D2B9A2C3594EA001AE115 /* PWStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B992C3594EA001AE115 /* PWStackView.swift */; };
 		A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */; };
+		A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */; };
 		A249D39A2C33F8DA00E65163 /* WeatherEntity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */; };
 		A25F113C2C33D86D000706BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113B2C33D86D000706BE /* AppDelegate.swift */; };
 		A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F113D2C33D86D000706BE /* SceneDelegate.swift */; };
@@ -66,6 +67,7 @@
 		A21D2B962C358E19001AE115 /* PWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWImageView.swift; sourceTree = "<group>"; };
 		A21D2B992C3594EA001AE115 /* PWStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWStackView.swift; sourceTree = "<group>"; };
 		A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDescription+Extension.swift"; sourceTree = "<group>"; };
 		A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherEntity+Extension.swift"; sourceTree = "<group>"; };
 		A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinsoft-WeatherApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25F113B2C33D86D000706BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */,
 				A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */,
 				A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */,
+				A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				A25F118A2C33E8B7000706BE /* CoreDataStack.swift in Sources */,
 				A25F117B2C33DDE9000706BE /* PWTabBarController.swift in Sources */,
 				A25F11862C33E87D000706BE /* PWWeatherCell.swift in Sources */,
+				A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */,
 				A25F11842C33E857000706BE /* PWWeatherDetailViewController.swift in Sources */,
 				A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */,
 				A25F11B32C33F66B000706BE /* WeatherEntity+CoreDataClass.swift in Sources */,

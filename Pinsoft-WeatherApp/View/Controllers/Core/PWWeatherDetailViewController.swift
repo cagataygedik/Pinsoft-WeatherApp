@@ -13,19 +13,21 @@ final class PWWeatherDetailViewController: UIViewController {
     
     private let cityLabel = PWLabel(textAlignment: .center, fontSize: 40, fontWeight: .semibold)
     private let countryLabel = PWLabel(textAlignment: .center, fontSize: 20, fontWeight: .medium)
-    private let humidityLabel = PWLabel(textAlignment: .left, fontSize: 16, fontWeight: .light)
     private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 40, fontWeight: .semibold)
-    private let descriptionLabel = PWLabel(textAlignment: .center, fontSize: 20, fontWeight: .medium)
+    private let weatherDescriptionLabel = PWLabel(textAlignment: .center, fontSize: 20, fontWeight: .medium)
+    private let humidityLabel = PWLabel(textAlignment: .left, fontSize: 16, fontWeight: .light)
     private let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    private let humidityImageView = PWImageView(systemName: "humidity")
     private let temperatureImageView = PWImageView(systemName: "thermometer.medium")
+    private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
+    private let humidityImageView = PWImageView(systemName: "humidity")
     private let windSpeedImageView = PWImageView(systemName: "wind")
     
     private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
+    private let weatherDescriptionStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)
     private let humidityStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
     private let windSpeedStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
-    private let verticalStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 60)
+    private let verticalStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 40)
     private let horizontalStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 180)
     private let forecastContainerView = PWStackView(axis: .horizontal, alignment: .center, distribution: .fillEqually, spacing: 10)
     
@@ -78,19 +80,23 @@ final class PWWeatherDetailViewController: UIViewController {
     }
     
     private func addSubviews() {
+        temperatureStackView.addArrangedSubview(temperatureImageView)
+        temperatureStackView.addArrangedSubview(temperatureLabel)
+        
+        weatherDescriptionStackView.addArrangedSubview(weatherDescriptionImageView)
+        weatherDescriptionStackView.addArrangedSubview(weatherDescriptionLabel)
+        
         humidityStackView.addArrangedSubview(humidityImageView)
         humidityStackView.addArrangedSubview(humidityLabel)
         
         windSpeedStackView.addArrangedSubview(windSpeedImageView)
         windSpeedStackView.addArrangedSubview(windSpeedLabel)
         
-        temperatureStackView.addArrangedSubview(temperatureImageView)
-        temperatureStackView.addArrangedSubview(temperatureLabel)
         
         verticalStackView.addArrangedSubview(cityLabel)
         verticalStackView.addArrangedSubview(countryLabel)
         verticalStackView.addArrangedSubview(temperatureStackView)
-        verticalStackView.addArrangedSubview(descriptionLabel)
+        verticalStackView.addArrangedSubview(weatherDescriptionStackView)
         verticalStackView.addArrangedSubview(horizontalStackView)
         
         horizontalStackView.addArrangedSubview(humidityStackView)
@@ -112,13 +118,17 @@ final class PWWeatherDetailViewController: UIViewController {
         temperatureImageView.snp.makeConstraints { make in
             make.width.height.equalTo(temperatureLabel.snp.height)
         }
+        
+        weatherDescriptionImageView.snp.makeConstraints { make in
+            make.width.height.equalTo(80)
+        }
     }
     
     private func configureUI() {
         cityLabel.text = weather.city
         countryLabel.text = weather.country
         temperatureLabel.text = "\(weather.temperature)°C"
-        descriptionLabel.text = weather.weatherDescription
+        weatherDescriptionLabel.text = weather.weatherDescription
         humidityLabel.text = "\(weather.humidity)%"
         windSpeedLabel.text = "\(weather.windSpeed)KM/H"
         
@@ -127,6 +137,10 @@ final class PWWeatherDetailViewController: UIViewController {
             let forecastView = PWForecastView()
             forecastView.configure(day: forecast.date.toDisplayDateFormat() ?? forecast.date, description: forecast.weatherDescription, temperature: "\(forecast.temperature)°C")
             forecastContainerView.addArrangedSubview(forecastView)
+        }
+        
+        if let weatherDescription = WeatherDescription(rawValue: weather.weatherDescription) {
+            weatherDescriptionImageView.image = UIImage(systemName: weatherDescription.imageName)
         }
     }
 }

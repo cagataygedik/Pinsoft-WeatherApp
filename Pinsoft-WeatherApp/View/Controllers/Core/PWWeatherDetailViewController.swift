@@ -125,7 +125,7 @@ final class PWWeatherDetailViewController: UIViewController {
         forecastContainerView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         for forecast in weather.forecast.prefix(2) {
             let forecastView = PWForecastView()
-            forecastView.configure(day: forecast.date, description: forecast.weatherDescription, temperature: "\(forecast.temperature)°C")
+            forecastView.configure(day: forecast.date.toDisplayDateFormat() ?? forecast.date, description: forecast.weatherDescription, temperature: "\(forecast.temperature)°C")
             forecastContainerView.addArrangedSubview(forecastView)
         }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating, PWFavoritesViewDelegate {
+final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating, PWFavoritesViewDelegate, PWWeatherDetailDelegate {
     private let favoritesView = PWFavoritesView()
     private var searchController = UISearchController()
     private var viewModel = PWFavoritesViewModel.shared
@@ -62,8 +62,14 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
     }
     
     func didSelectWeather(_ weather: Weather) {
-        let detailVC = PWWeatherDetailViewController(weather: weather)
-        navigationController?.pushViewController(detailVC, animated: true)
+        let detailViewController = PWWeatherDetailViewController(weather: weather)
+        detailViewController.delegate = self
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func didUpdateFavoriteStatus(for weather: Weather) {
+        viewModel.loadFavorites()
+        favoritesView.collectionView.reloadData()
     }
 }
 

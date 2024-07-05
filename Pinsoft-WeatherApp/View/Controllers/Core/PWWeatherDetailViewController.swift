@@ -11,6 +11,7 @@ import SnapKit
 final class PWWeatherDetailViewController: UIViewController {
     private let weatherDetailView = PWWeatherDetailView()
     private var viewModel: PWWeatherDetailViewModel
+    weak var delegate: PWWeatherDetailDelegate?
     
     init(weather: Weather) {
         self.viewModel = PWWeatherDetailViewModel(weather: weather)
@@ -39,8 +40,9 @@ final class PWWeatherDetailViewController: UIViewController {
     
     @objc private func toggleFavorite() {
         viewModel.toggleFavorite()
-        navigationItem.rightBarButtonItem?.image = UIImage(systemName: viewModel.isFavorite ? "star" : "star.fill")
-        showAlert(title: viewModel.isFavorite ? "Removed from favorites" : "Added to favorites", message: "\(viewModel.city) has been \(viewModel.isFavorite ? "removed from" : "added to") favorites")
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: viewModel.isFavorite ? "star.fill" : "star")
+        showAlert(title: viewModel.isFavorite ? "Added to favorites" : "Removed from favorites", message: "\(viewModel.city) has been \(viewModel.isFavorite ? "added to" : "removed from") favorites")
+        delegate?.didUpdateFavoriteStatus(for: viewModel.weather)
     }
     
     private func showAlert(title: String, message: String) {

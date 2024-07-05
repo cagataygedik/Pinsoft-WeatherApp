@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PWWeatherDetailDelegate: AnyObject {
+    func didUpdateFavoriteStatus(for weather: Weather)
+}
+
 final class PWWeatherDetailView: UIView {
     let cityLabel = PWLabel(textAlignment: .center, fontSize: 40, fontWeight: .semibold)
     let countryLabel = PWLabel(textAlignment: .center, fontSize: 20, fontWeight: .medium)

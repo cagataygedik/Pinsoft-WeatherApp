@@ -9,6 +9,7 @@ import UIKit
 
 protocol PWWeatherListViewDelegate: AnyObject {
     func didSelectWeather(_ weather: Weather)
+    func didUpdateFavoriteStatus(for weather: Weather)
 }
 
 final class PWWeatherListView: UIView {
@@ -38,5 +39,3 @@ final class PWWeatherListView: UIView {
         }
     }
 }
-
-

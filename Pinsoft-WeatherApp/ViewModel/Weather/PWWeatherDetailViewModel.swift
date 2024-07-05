@@ -8,7 +8,7 @@
 import Foundation
 
 final class PWWeatherDetailViewModel {
-    private var weather: Weather
+    var weather: Weather
     
     init(weather: Weather) {
         self.weather = weather
@@ -51,7 +51,6 @@ final class PWWeatherDetailViewModel {
         return Array(uniqueForecast.prefix(2))
     }
     
-    
     var isFavorite: Bool {
         return weather.isFavorite
     }
@@ -59,10 +58,9 @@ final class PWWeatherDetailViewModel {
     func toggleFavorite() {
         weather.isFavorite.toggle()
         if weather.isFavorite {
-            PWFavoritesViewModel.shared.removeFavorite(weather)
-        } else {
             PWFavoritesViewModel.shared.addFavorite(weather)
+        } else {
+            PWFavoritesViewModel.shared.removeFavorite(weather)
         }
-        NotificationCenter.default.post(name: NSNotification.Name("FavoritesUpdated"), object: nil)
     }
 }

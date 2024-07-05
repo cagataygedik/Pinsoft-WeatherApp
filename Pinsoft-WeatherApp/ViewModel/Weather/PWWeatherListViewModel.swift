@@ -58,4 +58,16 @@ final class PWWeatherListViewModel {
         }
         updateUI?()
     }
+    
+    func updateWeather(_ updatedWeather: Weather) {
+        if let index = weatherData.firstIndex(where: { $0.id == updatedWeather.id }) {
+            weatherData[index] = updatedWeather
+        }
+        
+        if let index = filteredWeatherData.firstIndex(where: { $0.id == updatedWeather.id }) {
+            filteredWeatherData[index] = updatedWeather
+        }
+        
+        updateUI?()
+    }
 }

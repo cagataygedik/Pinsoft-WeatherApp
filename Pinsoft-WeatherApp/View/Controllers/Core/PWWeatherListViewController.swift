@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PWWeatherListViewController: UIViewController, UISearchResultsUpdating, PWWeatherListViewDelegate {
+final class PWWeatherListViewController: UIViewController, UISearchResultsUpdating, PWWeatherListViewDelegate, PWWeatherDetailDelegate {
     private let weatherListView = PWWeatherListView()
     private var searchController = UISearchController()
     private let viewModel = PWWeatherListViewModel()
@@ -46,7 +46,7 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
 
     private func setupViewModel() {
         viewModel.updateUI = { [weak self] in
-            self?.sortWeatherDataByID()
+ //           self?.sortWeatherDataByID()
             self?.weatherListView.collectionView.reloadData()
         }
         viewModel.fetchWeather()
@@ -66,7 +66,13 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
 
     func didSelectWeather(_ weather: Weather) {
         let detailViewController = PWWeatherDetailViewController(weather: weather)
+        detailViewController.delegate = self
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    func didUpdateFavoriteStatus(for weather: Weather) {
+        viewModel.updateWeather(weather)
+        weatherListView.collectionView.reloadData()
     }
 }
 

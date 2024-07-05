@@ -46,9 +46,14 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
 
     private func setupViewModel() {
         viewModel.updateUI = { [weak self] in
+            self?.sortWeatherDataByID()
             self?.weatherListView.collectionView.reloadData()
         }
         viewModel.fetchWeather()
+    }
+    
+    private func sortWeatherDataByID() {
+        viewModel.filteredWeatherData.sort { $0.id < $1.id }
     }
 
     func updateSearchResults(for searchController: UISearchController) {

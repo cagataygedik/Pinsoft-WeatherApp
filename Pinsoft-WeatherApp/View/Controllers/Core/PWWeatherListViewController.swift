@@ -11,25 +11,26 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
     private let weatherListView = PWWeatherListView()
     private var searchController = UISearchController()
     private let viewModel = PWWeatherListViewModel()
-
+    
     override func loadView() {
         view = weatherListView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewController()
         setupSearchController()
         setupWeatherListView()
         setupViewModel()
+        setupNotificationCenter()
     }
-
+    
     private func configureViewController() {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.hidesSearchBarWhenScrolling = true
     }
-
+    
     private func setupSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -37,27 +38,31 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
         searchController.searchBar.placeholder = "Search for a city"
         navigationItem.searchController = searchController
     }
-
+    
     private func setupWeatherListView() {
         weatherListView.delegate = self
         weatherListView.collectionView.dataSource = self
         weatherListView.collectionView.delegate = self
     }
-
+    
     private func setupViewModel() {
         viewModel.updateUI = { [weak self] in
- //           self?.sortWeatherDataByID()
             self?.weatherListView.collectionView.reloadData()
         }
         viewModel.fetchWeather()
     }
     
-    /*
-    private func sortWeatherDataByID() {
-        viewModel.filteredWeatherData.sort { $0.id < $1.id }
+    private func setupNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleFavoritesUpdated(notification:)), name: NSNotification.Name("FavoritesUpdated"), object: nil)
     }
-     */
-
+    
+    @objc private func handleFavoritesUpdated(notification: Notification) {
+        if let updatedWeather = notification.userInfo?["updatedWeather"] as? Weather {
+            viewModel.updateWeather(updatedWeather)
+            weatherListView.collectionView.reloadData()
+        }
+    }
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         viewModel.filterWeather(by: searchText)
@@ -65,7 +70,7 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
             self.weatherListView.collectionView.reloadData()
         }, completion: nil)
     }
-
+    
     func didSelectWeather(_ weather: Weather) {
         let detailViewController = PWWeatherDetailViewController(weather: weather)
         detailViewController.delegate = self
@@ -82,7 +87,7 @@ extension PWWeatherListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.filteredWeatherData.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
             return UICollectionViewCell()

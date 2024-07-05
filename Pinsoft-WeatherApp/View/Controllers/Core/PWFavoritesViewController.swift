@@ -69,7 +69,10 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
     
     func didUpdateFavoriteStatus(for weather: Weather) {
         viewModel.loadFavorites()
-        favoritesView.collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.favoritesView.collectionView.reloadData()
+        }
+        NotificationCenter.default.post(name: NSNotification.Name("FavoritesUpdated"), object: nil, userInfo: ["updatedWeather": weather])
     }
 }
 
@@ -77,7 +80,7 @@ extension PWFavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.filteredFavorites.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
             return UICollectionViewCell()

@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class PWFavoritesViewModel {
+final class PWFavoritesViewModel {
     static let shared = PWFavoritesViewModel()
     private var favorites: [Weather] = []
     var filteredFavorites: [Weather] = []

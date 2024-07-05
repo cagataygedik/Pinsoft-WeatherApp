@@ -52,9 +52,11 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
         viewModel.fetchWeather()
     }
     
+    /*
     private func sortWeatherDataByID() {
         viewModel.filteredWeatherData.sort { $0.id < $1.id }
     }
+     */
 
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PWImageView: UIImageView {
+final class PWImageView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

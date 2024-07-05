@@ -7,7 +7,7 @@
 
 import Alamofire
 
-class WeatherService {
+final class WeatherService {
     static let shared = WeatherService()
     private let baseURL = "https://freetestapi.com/api/v1/weathers"
     private var currentPage = 1

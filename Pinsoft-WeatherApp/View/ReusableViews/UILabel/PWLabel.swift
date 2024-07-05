@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PWLabel: UILabel {
+final class PWLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configure()

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PWStackView: UIStackView {
+final class PWStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
     }

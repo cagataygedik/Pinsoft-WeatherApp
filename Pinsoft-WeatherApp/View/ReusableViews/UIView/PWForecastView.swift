@@ -8,7 +8,6 @@
 import UIKit
 
 final class PWForecastView: UIView {
-    
     private let dayLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .semibold)
     private let weatherDescriptionLabel = PWLabel(textAlignment: .center, fontSize: 14, fontWeight: .regular)
     private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .regular)

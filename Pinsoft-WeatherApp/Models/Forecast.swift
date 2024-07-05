@@ -19,4 +19,10 @@ struct Forecast: Codable {
         case weatherDescription = "weather_description"
         case humidity, windSpeed = "wind_speed"
     }
+    
+    var dateAsDate: Date? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: date)
+    }
 }

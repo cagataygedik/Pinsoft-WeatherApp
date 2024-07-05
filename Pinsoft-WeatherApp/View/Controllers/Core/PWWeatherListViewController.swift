@@ -8,9 +8,9 @@
 import UIKit
 
 final class PWWeatherListViewController: UIViewController, UISearchResultsUpdating, PWWeatherListViewDelegate {
-    private var weatherListView = PWWeatherListView()
+    private let weatherListView = PWWeatherListView()
     private var searchController = UISearchController()
-    private var viewModel: PWWeatherListViewModel = PWWeatherListViewModel()
+    private let viewModel = PWWeatherListViewModel()
 
     override func loadView() {
         view = weatherListView
@@ -60,8 +60,8 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
     }
 
     func didSelectWeather(_ weather: Weather) {
-        let detailVC = PWWeatherDetailViewController(weather: weather)
-        navigationController?.pushViewController(detailVC, animated: true)
+        let detailViewController = PWWeatherDetailViewController(weather: weather)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

@@ -8,7 +8,7 @@
 import UIKit
 
 final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating, PWFavoritesViewDelegate {
-    private var favoritesView = PWFavoritesView()
+    private let favoritesView = PWFavoritesView()
     private var searchController = UISearchController()
     private var viewModel = PWFavoritesViewModel.shared
     

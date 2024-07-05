@@ -43,6 +43,8 @@
 		A25F11B52C33F66B000706BE /* ForecastEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11B12C33F66B000706BE /* ForecastEntity+CoreDataClass.swift */; };
 		A25F11B62C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11B22C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift */; };
 		A287A0252C352276009D2726 /* PWForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A287A0242C352276009D2726 /* PWForecastView.swift */; };
+		A28EC7A12C37D2C200DE4815 /* PWWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */; };
+		A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */; };
 		A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */; };
 		A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		A25F11B12C33F66B000706BE /* ForecastEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A25F11B22C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A287A0242C352276009D2726 /* PWForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWForecastView.swift; sourceTree = "<group>"; };
+		A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailView.swift; sourceTree = "<group>"; };
+		A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailViewModel.swift; sourceTree = "<group>"; };
 		A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModel.swift; sourceTree = "<group>"; };
 		A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -336,6 +340,7 @@
 				A287A0242C352276009D2726 /* PWForecastView.swift */,
 				A2310CF52C36D42C009BFF06 /* PWWeatherListView.swift */,
 				A2310CF72C36DBDD009BFF06 /* PWFavoritesView.swift */,
+				A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */,
+				A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -500,6 +506,7 @@
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
 				A2310CF62C36D42C009BFF06 /* PWWeatherListView.swift in Sources */,
 				A25F118C2C33E8C5000706BE /* WeatherService.swift in Sources */,
+				A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */,
 				A2310CF32C36C0F9009BFF06 /* Constants.swift in Sources */,
 				A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */,
 				A25F117F2C33DE3D000706BE /* PWWeatherListViewController.swift in Sources */,
@@ -519,6 +526,7 @@
 				A25F11B42C33F66B000706BE /* WeatherEntity+CoreDataProperties.swift in Sources */,
 				A25F11B52C33F66B000706BE /* ForecastEntity+CoreDataClass.swift in Sources */,
 				A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */,
+				A28EC7A12C37D2C200DE4815 /* PWWeatherDetailView.swift in Sources */,
 				A25F11B62C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift in Sources */,
 				A25F11812C33DE78000706BE /* PWFavoritesViewController.swift in Sources */,
 				A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */,

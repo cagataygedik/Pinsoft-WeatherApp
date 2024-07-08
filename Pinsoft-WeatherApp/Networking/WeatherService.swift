@@ -7,7 +7,12 @@
 
 import Alamofire
 
-final class WeatherService {
+protocol WeatherServiceConformable {
+    func fetchWeatherData(completion: @escaping (Result<[Weather], Error>) -> Void)
+    func fetchNextPage(completion: @escaping (Result<[Weather], Error>) -> Void)
+}
+
+final class WeatherService: WeatherServiceConformable {
     static let shared = WeatherService()
     private let baseURL = "https://freetestapi.com/api/v1/weathers"
     private var currentPage = 1

@@ -8,13 +8,13 @@
 import Foundation
 
 final class PWWeatherListViewModel {
-    private var weatherService: WeatherService
+    private let weatherService: WeatherServiceConformable
     var weatherData: [Weather] = []
     var filteredWeatherData: [Weather] = []
     var updateUI: (() -> Void)?
     var isLoading = false
     
-    init(weatherService: WeatherService = WeatherService.shared) {
+    init(weatherService: WeatherServiceConformable = WeatherService.shared) {
         self.weatherService = weatherService
     }
     

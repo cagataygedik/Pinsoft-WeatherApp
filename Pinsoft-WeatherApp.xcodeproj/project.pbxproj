@@ -45,6 +45,8 @@
 		A287A0252C352276009D2726 /* PWForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A287A0242C352276009D2726 /* PWForecastView.swift */; };
 		A28EC7A12C37D2C200DE4815 /* PWWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */; };
 		A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */; };
+		A2A7A4162C3BE5100084397F /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A7A4152C3BE5100084397F /* WeatherServiceTests.swift */; };
+		A2A7A4182C3C03400084397F /* PWWeatherListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A7A4172C3C03400084397F /* PWWeatherListViewModelTests.swift */; };
 		A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */; };
 		A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +109,8 @@
 		A287A0242C352276009D2726 /* PWForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWForecastView.swift; sourceTree = "<group>"; };
 		A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailView.swift; sourceTree = "<group>"; };
 		A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailViewModel.swift; sourceTree = "<group>"; };
+		A2A7A4152C3BE5100084397F /* WeatherServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceTests.swift; sourceTree = "<group>"; };
+		A2A7A4172C3C03400084397F /* PWWeatherListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModelTests.swift; sourceTree = "<group>"; };
 		A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModel.swift; sourceTree = "<group>"; };
 		A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -235,7 +239,9 @@
 		A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A2A7A4192C3C0C700084397F /* ViewModelTest */,
 				A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */,
+				A2A7A4152C3BE5100084397F /* WeatherServiceTests.swift */,
 			);
 			path = "Pinsoft-WeatherAppTests";
 			sourceTree = "<group>";
@@ -334,6 +340,13 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A28612BF2C3C1F350001D9DF /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		A287A0262C35227A009D2726 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -343,6 +356,23 @@
 				A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		A2A7A4192C3C0C700084397F /* ViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				A28612BF2C3C1F350001D9DF /* Favorites */,
+				A2A7A41A2C3C100F0084397F /* Weather */,
+			);
+			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
+		A2A7A41A2C3C100F0084397F /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				A2A7A4172C3C03400084397F /* PWWeatherListViewModelTests.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		A2F28D932C34121500493115 /* Favorites */ = {
@@ -540,7 +570,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2A7A4162C3BE5100084397F /* WeatherServiceTests.swift in Sources */,
 				A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */,
+				A2A7A4182C3C03400084397F /* PWWeatherListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

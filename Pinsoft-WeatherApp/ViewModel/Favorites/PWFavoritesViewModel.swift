@@ -24,7 +24,7 @@ final class PWFavoritesViewModel {
     func addFavorite(_ weather: Weather) {
         if !favorites.contains(where: { $0.id == weather.id }) {
             favorites.append(weather)
-            CoreDataStack.shared.saveFavoriteWeatherData(weather)
+            coreDataStack.saveFavoriteWeatherData(weather)
             filterFavorites(by: "")
             updateUI?()
         }
@@ -33,7 +33,7 @@ final class PWFavoritesViewModel {
     func removeFavorite(_ weather: Weather) {
         if let index = favorites.firstIndex(where: { $0.id == weather.id }) {
             favorites.remove(at: index)
-            CoreDataStack.shared.removeFavoriteWeatherData(weather)
+            coreDataStack.removeFavoriteWeatherData(weather)
             filterFavorites(by: "")
             updateUI?()
         }

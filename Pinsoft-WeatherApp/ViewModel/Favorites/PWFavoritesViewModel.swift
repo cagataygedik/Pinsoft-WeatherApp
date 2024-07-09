@@ -9,12 +9,14 @@ import Foundation
 import CoreData
 
 final class PWFavoritesViewModel {
-    static let shared = PWFavoritesViewModel()
+    static let shared = PWFavoritesViewModel(coreDataStack: CoreDataStack.shared)
+    private let coreDataStack: CoreDataStackConformable
     private var favorites: [Weather] = []
     var filteredFavorites: [Weather] = []
     var updateUI: (() -> Void )?
     
-    private init() {
+    init(coreDataStack: CoreDataStackConformable) {
+        self.coreDataStack = coreDataStack
         loadFavorites()
         filteredFavorites = favorites
     }

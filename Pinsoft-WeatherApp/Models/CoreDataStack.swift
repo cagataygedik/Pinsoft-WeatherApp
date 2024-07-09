@@ -7,7 +7,14 @@
 
 import CoreData
 
-class CoreDataStack {
+protocol CoreDataStackConformable {
+    func saveFavoriteWeatherData(_ weather: Weather)
+    func removeFavoriteWeatherData(_ weather: Weather)
+    func fetchFavoriteWeatherData() -> [WeatherEntity]
+    func deleteAllWeatherData()
+}
+
+final class CoreDataStack: CoreDataStackConformable {
     static let shared = CoreDataStack()
     private init() {}
     

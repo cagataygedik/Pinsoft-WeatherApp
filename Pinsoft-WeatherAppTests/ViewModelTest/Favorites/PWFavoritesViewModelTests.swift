@@ -6,30 +6,118 @@
 //
 
 import XCTest
+import CoreData
+@testable import Pinsoft_WeatherApp
 
-final class PWFavoritesViewModelTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class MockCoreDataStack: CoreDataStackConformable {
+    var favoriteWeathers: [Weather] = []
+    
+    func saveFavoriteWeatherData(_ weather: Weather) { // Pinsoft_WeatherApp.Weather
+        favoriteWeathers.append(weather)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func removeFavoriteWeatherData(_ weather: Weather) { //Pinsoft_WeatherApp.Weather
+        favoriteWeathers.removeAll { $0.id == weather.id }
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func fetchFavoriteWeatherData() -> [Pinsoft_WeatherApp.WeatherEntity] {
+        return favoriteWeathers.map { weather in
+            let entity = WeatherEntity(context: NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType))
+            entity.id = Int64(weather.id)
+            entity.city = weather.city
+            entity.country = weather.country
+            entity.latitude = weather.latitude
+            entity.longitude = weather.longitude
+            entity.temperature = weather.temperature
+            entity.weatherDescription = weather.weatherDescription
+            entity.humidity = Int64(weather.humidity)
+            entity.windSpeed = weather.windSpeed
+            entity.isFavorite = weather.isFavorite
+            return entity
         }
     }
+    
+    func deleteAllWeatherData() {
+        favoriteWeathers.removeAll()
+    }
+}
 
+
+final class PWFavoritesViewModelTests: XCTestCase {
+    var sut: PWFavoritesViewModel!
+    var service: MockCoreDataStack!
+    
+    override func setUp() {
+        super.setUp()
+        service = MockCoreDataStack()
+        sut = PWFavoritesViewModel(coreDataStack: service)
+        sut.updateUI = nil // Reset the updateUI closure to avoid unintended reuse
+    }
+    
+    override func tearDown() {
+        service.deleteAllWeatherData()
+        sut = nil
+        service = nil
+        super.tearDown()
+    }
+    
+    func testAddFavorite() {
+        let weather = Weather(id: 1, city: "TestCity", country: "TestCountry", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
+        
+        let expectation = XCTestExpectation(description: "Favorite added")
+        sut.updateUI = {
+            XCTAssertEqual(self.sut.getFavorites().count, 1)
+            XCTAssertEqual(self.sut.getFavorites().first?.city, "TestCity")
+            expectation.fulfill()
+        }
+        
+        sut.addFavorite(weather)
+        wait(for: [expectation], timeout: 2.0)
+    }
+    
+    func testRemoveFavorite() {
+        let weather = Weather(id: 1, city: "TestCity", country: "TestCountry", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
+        
+        sut.addFavorite(weather)
+        
+        let expectation = XCTestExpectation(description: "Favorite removed")
+        sut.updateUI = {
+            XCTAssertEqual(self.sut.getFavorites().count, 0)
+            expectation.fulfill()
+        }
+        
+        sut.removeFavorite(weather)
+        wait(for: [expectation], timeout: 2.0)
+    }
+    
+    func testIsFavorite() {
+        let weather = Weather(id: 1, city: "TestCity", country: "TestCountry", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
+        
+        sut.addFavorite(weather)
+        
+        XCTAssertTrue(sut.isFavorite(weather))
+        
+        sut.removeFavorite(weather)
+        
+        XCTAssertFalse(sut.isFavorite(weather))
+    }
+    
+    func testFilterFavorites() {
+        let weather1 = Weather(id: 1, city: "New York", country: "USA", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
+        let weather2 = Weather(id: 2, city: "Los Angeles", country: "USA", latitude: 34.0522, longitude: -118.2437, temperature: 20.0, weatherDescription: "Cloudy", humidity: 70, windSpeed: 5.0, forecast: [], isFavorite: false)
+        
+        sut.addFavorite(weather1)
+        sut.addFavorite(weather2)
+        
+        sut.filterFavorites(by: "New")
+        XCTAssertEqual(sut.filteredFavorites.count, 1)
+        XCTAssertEqual(sut.filteredFavorites.first?.city, "New York")
+        
+        sut.filterFavorites(by: "Los")
+        XCTAssertEqual(sut.filteredFavorites.count, 1)
+        XCTAssertEqual(sut.filteredFavorites.first?.city, "Los Angeles")
+        
+        sut.filterFavorites(by: "")
+        XCTAssertEqual(sut.filteredFavorites.count, 2)
+    }
 }

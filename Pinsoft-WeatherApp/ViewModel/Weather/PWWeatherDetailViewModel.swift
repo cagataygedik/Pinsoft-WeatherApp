@@ -9,9 +9,11 @@ import Foundation
 
 final class PWWeatherDetailViewModel {
     var weather: Weather
+    var favoritesViewModel: PWFavoritesViewModel
     
-    init(weather: Weather) {
+    init(weather: Weather, favoritesViewModel: PWFavoritesViewModel = PWFavoritesViewModel.shared) {
         self.weather = weather
+        self.favoritesViewModel = favoritesViewModel
     }
     
     var city: String {
@@ -58,9 +60,9 @@ final class PWWeatherDetailViewModel {
     func toggleFavorite() {
         weather.isFavorite.toggle()
         if weather.isFavorite {
-            PWFavoritesViewModel.shared.addFavorite(weather)
+            favoritesViewModel.addFavorite(weather)
         } else {
-            PWFavoritesViewModel.shared.removeFavorite(weather)
+            favoritesViewModel.removeFavorite(weather)
         }
     }
 }

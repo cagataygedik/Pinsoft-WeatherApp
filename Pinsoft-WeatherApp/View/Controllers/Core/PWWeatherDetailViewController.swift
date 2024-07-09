@@ -13,8 +13,8 @@ final class PWWeatherDetailViewController: UIViewController {
     private var viewModel: PWWeatherDetailViewModel
     weak var delegate: PWWeatherDetailDelegate?
     
-    init(weather: Weather) {
-        self.viewModel = PWWeatherDetailViewModel(weather: weather)
+    init(weather: Weather, favoritesViewModel: PWFavoritesViewModel = PWFavoritesViewModel.shared) {
+        self.viewModel = PWWeatherDetailViewModel(weather: weather, favoritesViewModel: favoritesViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     

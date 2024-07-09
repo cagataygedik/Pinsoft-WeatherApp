@@ -61,6 +61,10 @@ final class PWFavoritesViewModelTests: XCTestCase {
         super.tearDown()
     }
     
+    func testViewModelInit() {
+        XCTAssertEqual(sut.filteredFavorites.count, 0)
+    }
+    
     func testAddFavorite() {
         let weather = Weather(id: 1, city: "TestCity", country: "TestCountry", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
         

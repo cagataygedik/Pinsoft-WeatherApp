@@ -31,6 +31,10 @@ final class PWWeatherDetailViewModelTests: XCTestCase {
         super.tearDown()
     }
     
+    func testInit() {
+        XCTAssertTrue(sut.favoritesViewModel === favoritesViewModel)
+    }
+    
     func testCity() {
         XCTAssertEqual(sut.city, "TestCity")
     }

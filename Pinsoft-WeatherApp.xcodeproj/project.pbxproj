@@ -181,6 +181,23 @@
 			path = UIStackView;
 			sourceTree = "<group>";
 		};
+		A221094B2C3E7303007A4430 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				A25F117E2C33DE3D000706BE /* PWWeatherListViewController.swift */,
+				A25F11832C33E857000706BE /* PWWeatherDetailViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		A221094C2C3E730F007A4430 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				A25F11802C33DE78000706BE /* PWFavoritesViewController.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		A249D3972C33F73200E65163 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,9 +346,8 @@
 		A25F117D2C33DE02000706BE /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				A25F117E2C33DE3D000706BE /* PWWeatherListViewController.swift */,
-				A25F11802C33DE78000706BE /* PWFavoritesViewController.swift */,
-				A25F11832C33E857000706BE /* PWWeatherDetailViewController.swift */,
+				A221094B2C3E7303007A4430 /* Weather */,
+				A221094C2C3E730F007A4430 /* Favorites */,
 			);
 			path = Core;
 			sourceTree = "<group>";

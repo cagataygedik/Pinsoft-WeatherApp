@@ -76,4 +76,20 @@ final class PWWeatherDetailViewModelTests: XCTestCase {
         XCTAssertFalse(sut.isFavorite)
         XCTAssertEqual(favoritesViewModel.getFavorites().count, 0)
     }
+    
+    func testFavoritePersistence() {
+        XCTAssertFalse(sut.isFavorite)
+        
+        sut.toggleFavorite()
+        XCTAssertTrue(sut.isFavorite)
+        
+        let newViewModel = PWWeatherDetailViewModel(weather: sut.weather, favoritesViewModel: favoritesViewModel)
+        XCTAssertTrue(newViewModel.isFavorite)
+        
+        sut.toggleFavorite()
+        XCTAssertFalse(sut.isFavorite)
+        
+        let anotherViewModel = PWWeatherDetailViewModel(weather: sut.weather, favoritesViewModel: favoritesViewModel)
+        XCTAssertFalse(anotherViewModel.isFavorite)
+    }
 }

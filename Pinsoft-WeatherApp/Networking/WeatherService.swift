@@ -22,9 +22,10 @@ final class WeatherService: WeatherServiceConformable {
         AF.request(url).responseDecodable(of: [Weather].self) { response in
             switch response.result {
             case .success(let weatherData):
+                let updatedWeatherData = CoreDataStack.shared.updateWeatherWithFavorites(weatherData)
                 CoreDataStack.shared.deleteAllWeatherData()
-                CoreDataStack.shared.saveWeatherData(weatherData)
-                completion(.success(weatherData))
+                CoreDataStack.shared.saveWeatherData(updatedWeatherData)
+                completion(.success(updatedWeatherData))
             case .failure(let error):
                 let offlineData = CoreDataStack.shared.fetchWeatherData().map { $0.toWeather() }
                 if !offlineData.isEmpty {
@@ -41,3 +42,4 @@ final class WeatherService: WeatherServiceConformable {
         fetchWeatherData(completion: completion)
     }
 }
+

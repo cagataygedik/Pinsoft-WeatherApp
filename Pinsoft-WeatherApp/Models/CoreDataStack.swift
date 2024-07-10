@@ -158,6 +158,19 @@ final class CoreDataStack: CoreDataStackConformable {
             print("Error removing favorite data: \(error)")
         }
     }
+    
+    func updateWeatherWithFavorites(_ weatherData: [Weather]) -> [Weather] {
+        let favoriteEntities = CoreDataStack.shared.fetchFavoriteWeatherData()
+        let favoriteIDs = Set(favoriteEntities.map { Int($0.id) })
+        
+        return weatherData.map { weather in
+            var updatedWeather = weather
+            if favoriteIDs.contains(weather.id) {
+                updatedWeather.isFavorite = true
+            }
+            return updatedWeather
+        }
+    }
 }
 
 

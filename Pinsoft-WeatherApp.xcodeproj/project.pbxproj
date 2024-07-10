@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */; };
+		A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */; };
 		A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */; };
 		A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */; };
 		A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B932C358B86001AE115 /* PWLabel.swift */; };
 		A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B962C358E19001AE115 /* PWImageView.swift */; };
 		A21D2B9A2C3594EA001AE115 /* PWStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B992C3594EA001AE115 /* PWStackView.swift */; };
+		A22549EB2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
+		A22549EC2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
+		A22549ED2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
+		A22549F02C3E8AA9002EA024 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */; };
+		A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */; };
 		A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */; };
 		A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */; };
 		A2310CF02C369958009BFF06 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */; };
@@ -71,11 +78,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
 		A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
 		A21D2B932C358B86001AE115 /* PWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWLabel.swift; sourceTree = "<group>"; };
 		A21D2B962C358E19001AE115 /* PWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWImageView.swift; sourceTree = "<group>"; };
 		A21D2B992C3594EA001AE115 /* PWStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWStackView.swift; sourceTree = "<group>"; };
+		A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDescription+Extension.swift"; sourceTree = "<group>"; };
 		A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -125,7 +134,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A25F11742C33D97A000706BE /* SnapKit in Frameworks */,
+				A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */,
+				A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */,
 				A25F11772C33D9CC000706BE /* Alamofire in Frameworks */,
+				A22549F02C3E8AA9002EA024 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +158,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A20CDF1D2C3EA61800CFED10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A21D2B912C358B68001AE115 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +247,7 @@
 				A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */,
 				A25F115E2C33D86E000706BE /* Pinsoft-WeatherAppUITests */,
 				A25F11392C33D86D000706BE /* Products */,
+				A20CDF1D2C3EA61800CFED10 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -244,6 +264,7 @@
 		A25F113A2C33D86D000706BE /* Pinsoft-WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
+				A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */,
 				A25F11712C33D926000706BE /* Models */,
 				A25F11702C33D921000706BE /* View */,
 				A25F116F2C33D911000706BE /* ViewModel */,
@@ -253,6 +274,7 @@
 				A249D3972C33F73200E65163 /* CoreData */,
 				A25F114C2C33D86E000706BE /* Info.plist */,
 				A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */,
+				A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */,
 			);
 			path = "Pinsoft-WeatherApp";
 			sourceTree = "<group>";
@@ -424,6 +446,7 @@
 				A25F11342C33D86D000706BE /* Sources */,
 				A25F11352C33D86D000706BE /* Frameworks */,
 				A25F11362C33D86D000706BE /* Resources */,
+				A20CDF222C3EC62200CFED10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -433,6 +456,9 @@
 			packageProductDependencies = (
 				A25F11732C33D97A000706BE /* SnapKit */,
 				A25F11762C33D9CC000706BE /* Alamofire */,
+				A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */,
+				A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */,
+				A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */,
 			);
 			productName = "Pinsoft-WeatherApp";
 			productReference = A25F11382C33D86D000706BE /* Pinsoft-WeatherApp.app */;
@@ -509,6 +535,7 @@
 			packageReferences = (
 				A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */,
 				A25F11752C33D9CC000706BE /* XCRemoteSwiftPackageReference "Alamofire" */,
+				A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = A25F11392C33D86D000706BE /* Products */;
 			projectDirPath = "";
@@ -528,6 +555,7 @@
 			files = (
 				A25F11482C33D86E000706BE /* Assets.xcassets in Resources */,
 				A25F114B2C33D86E000706BE /* Base in Resources */,
+				A22549EB2C3E894B002EA024 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +563,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22549EC2C3E894B002EA024 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,10 +571,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22549ED2C3E894B002EA024 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A20CDF222C3EC62200CFED10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A25F11342C33D86D000706BE /* Sources */ = {
@@ -558,6 +613,7 @@
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
 				A2310CF62C36D42C009BFF06 /* PWWeatherListView.swift in Sources */,
 				A25F118C2C33E8C5000706BE /* WeatherService.swift in Sources */,
+				A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */,
 				A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */,
 				A2310CF32C36C0F9009BFF06 /* Constants.swift in Sources */,
 				A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */,
@@ -762,6 +818,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 79CS75S5DL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Pinsoft-WeatherApp/Info.plist";
@@ -933,6 +990,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
 		A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -952,6 +1017,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAppDistribution-Beta";
+		};
+		A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		A25F11732C33D97A000706BE /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A25F11722C33D97A000706BE /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -85,14 +85,14 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
 
 extension PWWeatherListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.filteredWeatherData.count
+        return viewModel.paginatedWeatherData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PWWeatherCell.identifier, for: indexPath) as? PWWeatherCell else {
             return UICollectionViewCell()
         }
-        let weather = viewModel.filteredWeatherData[indexPath.item]
+        let weather = viewModel.paginatedWeatherData[indexPath.item]
         cell.configure(with: weather)
         return cell
     }
@@ -100,7 +100,18 @@ extension PWWeatherListViewController: UICollectionViewDataSource {
 
 extension PWWeatherListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let weather = viewModel.filteredWeatherData[indexPath.item]
+        let weather = viewModel.paginatedWeatherData[indexPath.item]
         didSelectWeather(weather)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height, viewModel.currentPage <= viewModel.totalPages {
+            viewModel.loadNextPage()
+        }
+    }
 }
+

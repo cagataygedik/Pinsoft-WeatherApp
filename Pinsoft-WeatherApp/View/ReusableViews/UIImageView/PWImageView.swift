@@ -18,9 +18,10 @@ final class PWImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init(systemName: String) {
+    convenience init(systemName: String, effect: BounceSymbolEffect) {
         self.init(frame: .zero)
         setSymbolImage(systemName: systemName)
+        addSymbolEffect(effect)
     }
     
     private func configure() {

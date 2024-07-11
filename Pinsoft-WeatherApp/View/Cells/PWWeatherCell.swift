@@ -18,10 +18,10 @@ final class PWWeatherCell: UICollectionViewCell {
     private let weatherDescriptionLabel = PWLabel(textAlignment: .right, fontSize: 18, fontWeight: .medium)
     private let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    private let humidityImageView = PWImageView(systemName: "humidity.fill")
-    private let temperatureImageView = PWImageView(systemName: "thermometer.high")
-    private let windSpeedImageView = PWImageView(systemName: "wind")
-    private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
+    private let humidityImageView = PWImageView(systemName: "humidity.fill", effect: .bounce)
+    private let temperatureImageView = PWImageView(systemName: "thermometer.high", effect: .bounce)
+    private let windSpeedImageView = PWImageView(systemName: "wind", effect: .bounce)
+    private let weatherDescriptionImageView = PWImageView(systemName: "cloud", effect: .bounce)
     
     private let humidityStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
     private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)

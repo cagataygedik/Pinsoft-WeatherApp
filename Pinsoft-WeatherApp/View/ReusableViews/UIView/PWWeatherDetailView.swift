@@ -19,10 +19,10 @@ final class PWWeatherDetailView: UIView {
     let humidityLabel = PWLabel(textAlignment: .left, fontSize: 16, fontWeight: .light)
     let windSpeedLabel = PWLabel(textAlignment: .right, fontSize: 16, fontWeight: .light)
     
-    let temperatureImageView = PWImageView(systemName: "thermometer.high")
-    let weatherDescriptionImageView = PWImageView(systemName: "cloud")
-    let humidityImageView = PWImageView(systemName: "humidity.fill")
-    let windSpeedImageView = PWImageView(systemName: "wind")
+    let temperatureImageView = PWImageView(systemName: "thermometer.high", effect: .bounce)
+    let weatherDescriptionImageView = PWImageView(systemName: "cloud", effect: .bounce)
+    let humidityImageView = PWImageView(systemName: "humidity.fill", effect: .bounce)
+    let windSpeedImageView = PWImageView(systemName: "wind", effect: .bounce)
     
     let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 5)
     let weatherDescriptionStackView = PWStackView(axis: .vertical, alignment: .center, distribution: .equalSpacing, spacing: 5)

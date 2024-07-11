@@ -12,8 +12,8 @@ final class PWForecastView: UIView {
     private let weatherDescriptionLabel = PWLabel(textAlignment: .center, fontSize: 14, fontWeight: .regular)
     private let temperatureLabel = PWLabel(textAlignment: .center, fontSize: 16, fontWeight: .regular)
     
-    private let weatherDescriptionImageView = PWImageView(systemName: "cloud")
-    private let temperatureImageView = PWImageView(systemName: "thermometer.high")
+    private let weatherDescriptionImageView = PWImageView(systemName: "cloud", effect: .bounce)
+    private let temperatureImageView = PWImageView(systemName: "thermometer.high", effect: .bounce)
     
     private let weatherDescriptionStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 2)
     private let temperatureStackView = PWStackView(axis: .horizontal, alignment: .center, distribution: .equalSpacing, spacing: 2)

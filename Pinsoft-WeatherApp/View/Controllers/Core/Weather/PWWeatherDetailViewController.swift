@@ -41,15 +41,7 @@ final class PWWeatherDetailViewController: UIViewController {
     @objc private func toggleFavorite() {
         viewModel.toggleFavorite()
         navigationItem.rightBarButtonItem?.image = UIImage(systemName: viewModel.isFavorite ? "star.fill" : "star")
- //       showAlert(title: viewModel.isFavorite ? "Added to favorites" : "Removed from favorites", message: "\(viewModel.city) has been \(viewModel.isFavorite ? "added to" : "removed from") favorites")
         delegate?.didUpdateFavoriteStatus(for: viewModel.weather)
-    }
-    
-    private func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
     }
     
     private func configureUI() {

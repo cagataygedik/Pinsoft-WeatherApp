@@ -56,9 +56,9 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         viewModel.filterFavorites(by: searchText)
-        UIView.transition(with: favoritesView.collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+        favoritesView.collectionView.animateSearchingState {
             self.favoritesView.collectionView.reloadData()
-        }, completion: nil)
+        }
     }
     
     func didSelectWeather(_ weather: Weather) {

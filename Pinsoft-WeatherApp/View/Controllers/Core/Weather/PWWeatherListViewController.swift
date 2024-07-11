@@ -66,9 +66,9 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
         viewModel.filterWeather(by: searchText)
-        UIView.transition(with: weatherListView.collectionView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+        weatherListView.collectionView.animateSearchingState {
             self.weatherListView.collectionView.reloadData()
-        }, completion: nil)
+        }
     }
     
     func didSelectWeather(_ weather: Weather) {

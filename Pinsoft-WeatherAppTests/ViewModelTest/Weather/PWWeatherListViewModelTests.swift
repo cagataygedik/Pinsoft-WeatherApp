@@ -10,14 +10,9 @@ import XCTest
 
 final class MockWeatherService: WeatherServiceConformable {
     var fetchWeatherDataResult: Result<[Weather], Error>?
-    var fetchNextPageResult: Result<[Weather], Error>?
     
-    func fetchWeatherData(completion: @escaping (Result<[Pinsoft_WeatherApp.Weather], any Error>) -> Void) {
+    func fetchWeatherData(page: Int, completion: @escaping (Result<[Pinsoft_WeatherApp.Weather], any Error>) -> Void) {
         if let result = fetchWeatherDataResult { completion(result) }
-    }
-    
-    func fetchNextPage(completion: @escaping (Result<[Pinsoft_WeatherApp.Weather], any Error>) -> Void) {
-        if let result = fetchNextPageResult { completion(result) }
     }
 }
 
@@ -40,7 +35,9 @@ final class PWWeatherListViewModelTests: XCTestCase {
     func testViewModelInit() {
         XCTAssertEqual(sut.weatherData.count, 0)
         XCTAssertEqual(sut.filteredWeatherData.count, 0)
+        XCTAssertEqual(sut.paginatedWeatherData.count, 0)
         XCTAssertFalse(sut.isLoading)
+        XCTAssertEqual(sut.currentPage, 1)
     }
     
     func testFetchWeatherSuccess() {
@@ -51,11 +48,10 @@ final class PWWeatherListViewModelTests: XCTestCase {
         sut.updateUI = {
             XCTAssertEqual(self.sut.weatherData.count, 1)
             XCTAssertEqual(self.sut.filteredWeatherData.count ,1)
- //           XCTAssertFalse(sut.isLoading)
+            XCTAssertEqual(self.sut.paginatedWeatherData.count, 1)
             expectation.fulfill()
         }
         sut.fetchWeather()
-//        XCTAssertTrue(sut.isLoading)
         wait(for: [expectation], timeout: 1.0)
     }
     
@@ -65,29 +61,28 @@ final class PWWeatherListViewModelTests: XCTestCase {
         
         sut.fetchWeather()
         
-//        XCTAssertFalse(sut.isLoading)
         XCTAssertEqual(sut.weatherData.count, 0)
         XCTAssertEqual(sut.filteredWeatherData.count, 0)
+        XCTAssertEqual(sut.paginatedWeatherData.count, 0)
     }
     
-    func testFetchNextPageSuccess() {
-        let initialWeatherData = [Weather(id: 1, city: "TestCity1", country: "TestCountry", latitude: 40.7128, longitude: -74.0060, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false
-                                         )]
-        let nextPageWeatherData = [Weather(id: 2, city: "TestCity2", country: "TestCountry", latitude: 34.0522, longitude: -118.2437, temperature: 20.0, weatherDescription: "Cloudy", humidity: 70, windSpeed: 5.0, forecast: [], isFavorite: false
-                                          )]
-        service.fetchWeatherDataResult = .success(initialWeatherData)
-        sut.fetchWeather()
-        service.fetchNextPageResult = .success(nextPageWeatherData)
-        
-        let expectation = XCTestExpectation(description: "Next page data fetched")
-        sut.updateUI = {
-            XCTAssertEqual(self.sut.weatherData.count, 2)
-            XCTAssertEqual(self.sut.filteredWeatherData.count, 2)
-//            XCTAssertFalse(sut.isLoading)
-            expectation.fulfill()
+    func testLoadNextPage() {
+        let weatherData = (1...15).map {
+            Weather(id: $0, city: "TestCity\($0)", country: "TestCountry", latitude: 40.7128, longitude: 40.7128, temperature: 25.0, weatherDescription: "Sunny", humidity: 60, windSpeed: 10.0, forecast: [], isFavorite: false)
         }
-        sut.fetchNextPage()
-//        XCTAssertTrue(sut.isLoading)
+        service.fetchWeatherDataResult = .success(weatherData)
+        
+        let expectation = XCTestExpectation(description: "Next page data loaded")
+        sut.updateUI = {
+            if self.sut.currentPage == 2 {
+                XCTAssertEqual(self.sut.paginatedWeatherData.count, 10)
+            } else if self.sut.currentPage == 3 {
+                XCTAssertEqual(self.sut.paginatedWeatherData.count, 15)
+                expectation.fulfill()
+            }
+        }
+        sut.fetchWeather()
+        sut.loadNextPage()
         wait(for: [expectation], timeout: 1.0)
     }
     

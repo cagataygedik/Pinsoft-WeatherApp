@@ -17,7 +17,6 @@
 		A22549EB2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
 		A22549EC2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
 		A22549ED2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
-		A22549F02C3E8AA9002EA024 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */; };
 		A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */; };
 		A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */; };
 		A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */; };
@@ -137,7 +136,6 @@
 				A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */,
 				A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */,
 				A25F11772C33D9CC000706BE /* Alamofire in Frameworks */,
-				A22549F02C3E8AA9002EA024 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +454,6 @@
 			packageProductDependencies = (
 				A25F11732C33D97A000706BE /* SnapKit */,
 				A25F11762C33D9CC000706BE /* Alamofire */,
-				A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */,
 				A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */,
 				A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */,
 			);
@@ -1023,11 +1020,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseAppDistribution-Beta";
-		};
-		A22549EF2C3E8AA9002EA024 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A22549EE2C3E8AA9002EA024 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
 		};
 		A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -14,6 +14,7 @@ final class PWFavoritesViewModel {
     private var favorites: [Weather] = []
     var filteredFavorites: [Weather] = []
     var updateUI: (() -> Void )?
+    var isEmpty: Bool { return filteredFavorites.isEmpty }
     
     init(coreDataStack: CoreDataStackConformable) {
         self.coreDataStack = coreDataStack

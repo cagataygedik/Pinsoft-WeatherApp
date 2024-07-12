@@ -9,6 +9,7 @@ import UIKit
 
 final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating, PWFavoritesViewDelegate, PWWeatherDetailDelegate {
     private let favoritesView = PWFavoritesView()
+    private let emptyFavoritesView = PWEmptyFavoritesView()
     private var searchController = UISearchController()
     private var viewModel = PWFavoritesViewModel.shared
     
@@ -22,6 +23,7 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
         setupSearchController()
         setupFavoritesView()
         setupViewModel()
+        setupEmptyFavoritesView()
     }
     
     private func configureViewController() {
@@ -48,9 +50,24 @@ final class PWFavoritesViewController: UIViewController, UISearchResultsUpdating
         viewModel.updateUI = { [weak self] in
             DispatchQueue.main.async {
                 self?.favoritesView.collectionView.reloadData()
+                self?.updateEmptyState()
             }
         }
         viewModel.loadFavorites()
+    }
+    
+    private func setupEmptyFavoritesView() {
+        view.addSubview(emptyFavoritesView)
+        emptyFavoritesView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        updateEmptyState()
+    }
+    
+    private func updateEmptyState() {
+        let isEmpty = viewModel.isEmpty && !searchController.isActive
+        emptyFavoritesView.isHidden = !isEmpty
+        navigationItem.searchController = isEmpty ? nil : searchController
     }
     
     func updateSearchResults(for searchController: UISearchController) {

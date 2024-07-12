@@ -43,10 +43,8 @@ final class PWWeatherListViewModel {
     
     func loadNextPage() {
         guard !isLoading, currentPage <= totalPages else { return }
-        
         let startIndex = (currentPage - 1) * itemsPerPage
         let endIndex = min(startIndex + itemsPerPage, filteredWeatherData.count)
-        
         if startIndex < endIndex {
             paginatedWeatherData.append(contentsOf: filteredWeatherData[startIndex..<endIndex])
             currentPage += 1

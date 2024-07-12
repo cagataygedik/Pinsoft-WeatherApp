@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 extension WeatherEntity {
     func toWeather() -> Weather {
         var forecastList: [Forecast] = []

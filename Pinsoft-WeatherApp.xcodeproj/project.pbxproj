@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */; };
 		A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */; };
-		A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */; };
 		A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */; };
 		A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B932C358B86001AE115 /* PWLabel.swift */; };
 		A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B962C358E19001AE115 /* PWImageView.swift */; };
@@ -18,6 +17,7 @@
 		A22549EC2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
 		A22549ED2C3E894B002EA024 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */; };
 		A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = A22549F12C3E8AA9002EA024 /* FirebaseCrashlytics */; };
+		A229449B2C41138E00857796 /* PWEmptyFavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229449A2C41138E00857796 /* PWEmptyFavoritesView.swift */; };
 		A2310CEC2C3687C4009BFF06 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */; };
 		A2310CEE2C368B9A009BFF06 /* WeatherDescription+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */; };
 		A2310CF02C369958009BFF06 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */; };
@@ -78,12 +78,12 @@
 
 /* Begin PBXFileReference section */
 		A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
-		A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
 		A21D2B932C358B86001AE115 /* PWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWLabel.swift; sourceTree = "<group>"; };
 		A21D2B962C358E19001AE115 /* PWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWImageView.swift; sourceTree = "<group>"; };
 		A21D2B992C3594EA001AE115 /* PWStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWStackView.swift; sourceTree = "<group>"; };
 		A22549EA2C3E894B002EA024 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A229449A2C41138E00857796 /* PWEmptyFavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWEmptyFavoritesView.swift; sourceTree = "<group>"; };
 		A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherDescription+Extension.swift"; sourceTree = "<group>"; };
 		A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				A249D3992C33F8DA00E65163 /* WeatherEntity+Extension.swift */,
-				A21D2B8D2C3577A8001AE115 /* UIViewController+Extension.swift */,
 				A2310CEB2C3687C4009BFF06 /* Date+Extension.swift */,
 				A2310CED2C368B9A009BFF06 /* WeatherDescription+Extension.swift */,
 				A2310CEF2C369958009BFF06 /* UIImageView+Extension.swift */,
@@ -395,6 +394,7 @@
 				A2310CF52C36D42C009BFF06 /* PWWeatherListView.swift */,
 				A2310CF72C36DBDD009BFF06 /* PWFavoritesView.swift */,
 				A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */,
+				A229449A2C41138E00857796 /* PWEmptyFavoritesView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -621,6 +621,7 @@
 				A25F113E2C33D86D000706BE /* SceneDelegate.swift in Sources */,
 				A25F11882C33E8A9000706BE /* Weather.swift in Sources */,
 				A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */,
+				A229449B2C41138E00857796 /* PWEmptyFavoritesView.swift in Sources */,
 				A25F118A2C33E8B7000706BE /* CoreDataStack.swift in Sources */,
 				A2310CF82C36DBDD009BFF06 /* PWFavoritesView.swift in Sources */,
 				A25F117B2C33DDE9000706BE /* PWTabBarController.swift in Sources */,
@@ -635,7 +636,6 @@
 				A28EC7A12C37D2C200DE4815 /* PWWeatherDetailView.swift in Sources */,
 				A25F11B62C33F66B000706BE /* ForecastEntity+CoreDataProperties.swift in Sources */,
 				A25F11812C33DE78000706BE /* PWFavoritesViewController.swift in Sources */,
-				A21D2B8E2C3577A8001AE115 /* UIViewController+Extension.swift in Sources */,
 				A21D2B9A2C3594EA001AE115 /* PWStackView.swift in Sources */,
 				A249D39A2C33F8DA00E65163 /* WeatherEntity+Extension.swift in Sources */,
 				A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */,

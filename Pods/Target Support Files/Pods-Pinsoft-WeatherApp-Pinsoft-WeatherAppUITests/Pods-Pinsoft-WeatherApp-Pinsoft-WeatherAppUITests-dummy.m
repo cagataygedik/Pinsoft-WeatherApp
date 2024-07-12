@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests : NSObject
+@end
+@implementation PodsDummy_Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests
+@end

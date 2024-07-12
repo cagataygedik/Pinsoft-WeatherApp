@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22097CAE2F3FF69184F333CD /* Pods_Pinsoft_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE07BB39BA0A7D0369CB9D8A /* Pods_Pinsoft_WeatherAppTests.framework */; };
+		A062C049E304B3E58017A84D /* Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAA362A5EBDE03AF5A67817 /* Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework */; };
 		A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */; };
 		A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */; };
 		A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */; };
@@ -31,7 +33,6 @@
 		A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A25F11442C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld */; };
 		A25F11482C33D86E000706BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A25F11472C33D86E000706BE /* Assets.xcassets */; };
 		A25F114B2C33D86E000706BE /* Base in Resources */ = {isa = PBXBuildFile; fileRef = A25F114A2C33D86E000706BE /* Base */; };
-		A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */; };
 		A25F11602C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */; };
 		A25F11622C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */; };
 		A25F11742C33D97A000706BE /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = A25F11732C33D97A000706BE /* SnapKit */; };
@@ -57,6 +58,7 @@
 		A2D4B9B22C3FC25E00542A61 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4B9B12C3FC25E00542A61 /* UIView+Extension.swift */; };
 		A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */; };
 		A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */; };
+		D65AD9225B0033333DAF8E70 /* Pods_Pinsoft_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA49FD10A656621C13D7192 /* Pods_Pinsoft_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0414F1E390069CC812D43804 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests/Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		667E01568D2905308F607162 /* Pods-Pinsoft-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherApp/Pods-Pinsoft-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
+		6871DA9E306AF3D916B2D924 /* Pods-Pinsoft-WeatherAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherAppTests.release.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherAppTests/Pods-Pinsoft-WeatherAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6CC72D316DE452C3286CE5D6 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.release.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests/Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7DA49FD10A656621C13D7192 /* Pods_Pinsoft_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinsoft_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86390068224D588D99C5B2F7 /* Pods-Pinsoft-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherAppTests/Pods-Pinsoft-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
 		A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
 		A21D2B932C358B86001AE115 /* PWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWLabel.swift; sourceTree = "<group>"; };
@@ -100,7 +108,6 @@
 		A25F114A2C33D86E000706BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A25F114C2C33D86E000706BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A25F11512C33D86E000706BE /* Pinsoft-WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinsoft-WeatherAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppTests.swift; sourceTree = "<group>"; };
 		A25F115B2C33D86E000706BE /* Pinsoft-WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pinsoft-WeatherAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A25F115F2C33D86E000706BE /* Pinsoft_WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppUITests.swift; sourceTree = "<group>"; };
 		A25F11612C33D86E000706BE /* Pinsoft_WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pinsoft_WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,6 +132,9 @@
 		A2D4B9B12C3FC25E00542A61 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModel.swift; sourceTree = "<group>"; };
 		A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesViewModel.swift; sourceTree = "<group>"; };
+		CDAA362A5EBDE03AF5A67817 /* Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D04CFE983958144FE3D74988 /* Pods-Pinsoft-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherApp/Pods-Pinsoft-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		FE07BB39BA0A7D0369CB9D8A /* Pods_Pinsoft_WeatherAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinsoft_WeatherAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +146,7 @@
 				A22549F22C3E8AA9002EA024 /* FirebaseCrashlytics in Frameworks */,
 				A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */,
 				A25F11772C33D9CC000706BE /* Alamofire in Frameworks */,
+				D65AD9225B0033333DAF8E70 /* Pods_Pinsoft_WeatherApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22097CAE2F3FF69184F333CD /* Pods_Pinsoft_WeatherAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,15 +162,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A062C049E304B3E58017A84D /* Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0A5F593F34E1FA415FB239 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				667E01568D2905308F607162 /* Pods-Pinsoft-WeatherApp.debug.xcconfig */,
+				D04CFE983958144FE3D74988 /* Pods-Pinsoft-WeatherApp.release.xcconfig */,
+				0414F1E390069CC812D43804 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.debug.xcconfig */,
+				6CC72D316DE452C3286CE5D6 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.release.xcconfig */,
+				86390068224D588D99C5B2F7 /* Pods-Pinsoft-WeatherAppTests.debug.xcconfig */,
+				6871DA9E306AF3D916B2D924 /* Pods-Pinsoft-WeatherAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A20CDF1D2C3EA61800CFED10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DA49FD10A656621C13D7192 /* Pods_Pinsoft_WeatherApp.framework */,
+				CDAA362A5EBDE03AF5A67817 /* Pods_Pinsoft_WeatherApp_Pinsoft_WeatherAppUITests.framework */,
+				FE07BB39BA0A7D0369CB9D8A /* Pods_Pinsoft_WeatherAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,6 +276,7 @@
 				A25F115E2C33D86E000706BE /* Pinsoft-WeatherAppUITests */,
 				A25F11392C33D86D000706BE /* Products */,
 				A20CDF1D2C3EA61800CFED10 /* Frameworks */,
+				3F0A5F593F34E1FA415FB239 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,7 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				A2A7A4192C3C0C700084397F /* ViewModelTest */,
-				A25F11552C33D86E000706BE /* Pinsoft_WeatherAppTests.swift */,
 			);
 			path = "Pinsoft-WeatherAppTests";
 			sourceTree = "<group>";
@@ -441,6 +471,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A25F11652C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherApp" */;
 			buildPhases = (
+				1B073527045B11E48A9D459C /* [CP] Check Pods Manifest.lock */,
 				A25F11342C33D86D000706BE /* Sources */,
 				A25F11352C33D86D000706BE /* Frameworks */,
 				A25F11362C33D86D000706BE /* Resources */,
@@ -465,6 +496,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A25F11682C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppTests" */;
 			buildPhases = (
+				A3A44E5E98C1DD2D1256AA92 /* [CP] Check Pods Manifest.lock */,
 				A25F114D2C33D86E000706BE /* Sources */,
 				A25F114E2C33D86E000706BE /* Frameworks */,
 				A25F114F2C33D86E000706BE /* Resources */,
@@ -483,6 +515,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A25F116B2C33D86E000706BE /* Build configuration list for PBXNativeTarget "Pinsoft-WeatherAppUITests" */;
 			buildPhases = (
+				49AA69E98EF57D279CC9BF02 /* [CP] Check Pods Manifest.lock */,
 				A25F11572C33D86E000706BE /* Sources */,
 				A25F11582C33D86E000706BE /* Frameworks */,
 				A25F11592C33D86E000706BE /* Resources */,
@@ -575,6 +608,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1B073527045B11E48A9D459C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pinsoft-WeatherApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49AA69E98EF57D279CC9BF02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A20CDF222C3EC62200CFED10 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -596,6 +673,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+		A3A44E5E98C1DD2D1256AA92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pinsoft-WeatherAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -646,7 +745,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A25F11562C33D86E000706BE /* Pinsoft_WeatherAppTests.swift in Sources */,
 				A2A7A4182C3C03400084397F /* PWWeatherListViewModelTests.swift in Sources */,
 				A239339E2C3D28C8006D458C /* PWWeatherDetailViewModelTests.swift in Sources */,
 				A28612C12C3C1F7E0001D9DF /* PWFavoritesViewModelTests.swift in Sources */,
@@ -810,6 +908,7 @@
 		};
 		A25F11662C33D86E000706BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667E01568D2905308F607162 /* Pods-Pinsoft-WeatherApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -827,7 +926,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -842,6 +941,7 @@
 		};
 		A25F11672C33D86E000706BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D04CFE983958144FE3D74988 /* Pods-Pinsoft-WeatherApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -858,7 +958,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.celilcagataygedik.Pinsoft-WeatherApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -873,6 +973,7 @@
 		};
 		A25F11692C33D86E000706BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86390068224D588D99C5B2F7 /* Pods-Pinsoft-WeatherAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -893,6 +994,7 @@
 		};
 		A25F116A2C33D86E000706BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6871DA9E306AF3D916B2D924 /* Pods-Pinsoft-WeatherAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -913,6 +1015,7 @@
 		};
 		A25F116C2C33D86E000706BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0414F1E390069CC812D43804 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -931,6 +1034,7 @@
 		};
 		A25F116D2C33D86E000706BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CC72D316DE452C3286CE5D6 /* Pods-Pinsoft-WeatherApp-Pinsoft-WeatherAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

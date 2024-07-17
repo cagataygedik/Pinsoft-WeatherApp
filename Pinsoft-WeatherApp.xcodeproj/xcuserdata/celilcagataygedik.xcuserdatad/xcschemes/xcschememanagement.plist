@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PWWeatherWidgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>Pinsoft-WeatherApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

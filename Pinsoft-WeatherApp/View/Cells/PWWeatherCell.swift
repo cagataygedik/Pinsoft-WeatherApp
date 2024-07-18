@@ -45,7 +45,7 @@ final class PWWeatherCell: UICollectionViewCell {
     
     private func setupLayer() {
         contentView.backgroundColor = .systemBackground
-        contentView.layer.cornerRadius = 8
+        contentView.layer.cornerRadius = 16
         contentView.layer.borderColor = UIColor.clear.cgColor
         contentView.layer.borderWidth = 2
     }

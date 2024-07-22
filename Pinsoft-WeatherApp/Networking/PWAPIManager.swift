@@ -18,9 +18,4 @@ final class PWAPIManager {
         let endpoint = PWEndpoint.weather(page: page)
         networkService.request(endpoint: endpoint, completion: completion)
     }
-    
-    func requestAirlineData(completion: @escaping (Result<[Airline], Error>) -> Void) {
-        let endpoint = PWEndpoint.airlines
-        networkService.request(endpoint: endpoint, completion: completion)
-    }
 }

@@ -23,7 +23,6 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
         setupWeatherListView()
         setupViewModel()
         setupNotificationCenter()
-        testFetchAirlineData()
     }
     
     private func configureViewController() {
@@ -82,22 +81,7 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
         viewModel.updateWeather(weather)
         weatherListView.collectionView.reloadData()
     }
-    
-    func testFetchAirlineData() {
-        let networkService = PWNetworkService()
-        let APIManager = PWAPIManager(networkService: networkService)
-        
-        APIManager.requestAirlineData { result in
-            switch result {
-            case .success(let airlines):
-                for airline in airlines {
-                    print("Airline Code: \(airline.code)")
-                }
-            case .failure(let error):
-                print("Error fetching airline data: \(error)")
-            }
-        }
-    }}
+}
 
 extension PWWeatherListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

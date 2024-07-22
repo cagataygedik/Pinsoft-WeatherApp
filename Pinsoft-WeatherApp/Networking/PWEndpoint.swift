@@ -10,27 +10,24 @@ import Alamofire
 
 enum PWEndpoint {
     case weather(page: Int)
-    case airlines
     
     var path: String {
         switch self {
         case .weather(let page):
             return "/api/v1/weathers?page=\(page)"
-        case .airlines:
-            return "/api/v1/airlines"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .weather, .airlines:
+        case .weather:
             return .get
         }
     }
     
     var parameters: [String: Any]? {
         switch self {
-        case .weather, .airlines:
+        case .weather:
             return nil
         }
     }

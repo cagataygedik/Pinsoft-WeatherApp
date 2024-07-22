@@ -18,7 +18,7 @@ final class PWWeatherListViewModel {
     private let itemsPerPage = 10
     let totalPages = 6
     
-    init(weatherService: WeatherServiceConformable = WeatherService.shared) {
+    init(weatherService: WeatherServiceConformable = PWWeatherService.shared) {
         self.weatherService = weatherService
     }
     

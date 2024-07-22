@@ -21,13 +21,13 @@ public enum WeatherDescription: String, Equatable, Codable {
     var backgroundColor: UIColor {
         switch self {
         case .clearSky, .partlyCloudy, .weatherDescriptionPartlyCloudy:
-            return Constants.lightBlueColor!
+            return Colors.lightBlueColor!
         case .cloudy:
-            return Constants.lightGrayColor!
+            return Colors.lightGrayColor!
         case .rain, .rainShowers, .rainy, .scatteredClouds:
-            return Constants.darkGrayColor!
+            return Colors.darkGrayColor!
         case .sunny:
-            return Constants.lightYellowColor!
+            return Colors.lightYellowColor!
         }
     }
 }

@@ -11,15 +11,18 @@ protocol WeatherServiceConformable {
     func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], Error>) -> Void)
 }
 
-final class WeatherService: WeatherServiceConformable {
-    static let shared = WeatherService()
-    private let baseURL = "https://freetestapi.com/api/v1/weathers"
-    private var currentPage = 1
+final class PWWeatherService: WeatherServiceConformable {
+    static let shared = PWWeatherService()
+    private let APIManager: PWAPIManager
+//    private var currentPage = 1
+    
+    init(apiManager: PWAPIManager = PWAPIManager(networkService: PWNetworkService())) {
+        self.APIManager = apiManager
+    }
     
     func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], Error>) -> Void) {
-        let url = "\(baseURL)?page=\(page)"
-        AF.request(url).responseDecodable(of: [Weather].self) { response in
-            switch response.result {
+        APIManager.requestWeatherData(page: page) { result in
+            switch result {
             case .success(let weatherData):
                 let updatedWeatherData = CoreDataStack.shared.updateWeatherWithFavorites(weatherData)
                 CoreDataStack.shared.deleteAllWeatherData()

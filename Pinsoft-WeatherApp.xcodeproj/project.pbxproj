@@ -268,6 +268,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		A24FED442C4F9F3F00B93392 /* NetworkingTest */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkingTest;
+			sourceTree = "<group>";
+		};
 		A25F112F2C33D86D000706BE = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +316,7 @@
 		A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A24FED442C4F9F3F00B93392 /* NetworkingTest */,
 				A2A7A4192C3C0C700084397F /* ViewModelTest */,
 			);
 			path = "Pinsoft-WeatherAppTests";

@@ -56,27 +56,47 @@ final class CoreDataStack: CoreDataStackConformable {
     
     func saveWeatherData(_ weatherData: [Weather]) {
         for weather in weatherData {
-            let entity = WeatherEntity(context: context)
-            entity.id = Int64(weather.id)
-            entity.city = weather.city
-            entity.country = weather.country
-            entity.latitude = weather.latitude
-            entity.longitude = weather.longitude
-            entity.temperature = weather.temperature
-            entity.weatherDescription = weather.weatherDescription
-            entity.humidity = Int64(weather.humidity)
-            entity.windSpeed = weather.windSpeed
-            entity.isFavorite = weather.isFavorite
+            let fetchRequest: NSFetchRequest<WeatherEntity> = WeatherEntity.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %d", weather.id)
             
-            for forecast in weather.forecast {
-                let forecastEntity = ForecastEntity(context: context)
-                forecastEntity.date = forecast.date
-                forecastEntity.temperature = forecast.temperature
-                forecastEntity.weatherDescription = forecast.weatherDescription
-                forecastEntity.humidity = Int64(forecast.humidity)
-                forecastEntity.windSpeed = forecast.windSpeed
-                forecastEntity.weather = entity
-                entity.addToForecast(forecastEntity)
+            do {
+                let results = try context.fetch(fetchRequest)
+                let entity: WeatherEntity
+                
+                if let existingEntity = results.first {
+                    entity = existingEntity
+                } else {
+                    entity = WeatherEntity(context: context)
+                }
+                //                let entity = WeatherEntity(context: context)
+                entity.id = Int64(weather.id)
+                entity.city = weather.city
+                entity.country = weather.country
+                entity.latitude = weather.latitude
+                entity.longitude = weather.longitude
+                entity.temperature = weather.temperature
+                entity.weatherDescription = weather.weatherDescription
+                entity.humidity = Int64(weather.humidity)
+                entity.windSpeed = weather.windSpeed
+                entity.isFavorite = weather.isFavorite
+                
+                if let forecasts = entity.forecast as? Set<ForecastEntity> {
+                    for forecast in forecasts {
+                        context.delete(forecast)
+                    }
+                }
+                for forecast in weather.forecast {
+                    let forecastEntity = ForecastEntity(context: context)
+                    forecastEntity.date = forecast.date
+                    forecastEntity.temperature = forecast.temperature
+                    forecastEntity.weatherDescription = forecast.weatherDescription
+                    forecastEntity.humidity = Int64(forecast.humidity)
+                    forecastEntity.windSpeed = forecast.windSpeed
+                    forecastEntity.weather = entity
+                    entity.addToForecast(forecastEntity)
+                }
+            } catch {
+                print("error saving data: \(error)")
             }
         }
         saveContext()

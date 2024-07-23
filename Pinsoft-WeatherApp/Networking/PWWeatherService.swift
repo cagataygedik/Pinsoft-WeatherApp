@@ -25,7 +25,6 @@ final class PWWeatherService: WeatherServiceConformable {
             switch result {
             case .success(let weatherData):
                 let updatedWeatherData = CoreDataStack.shared.updateWeatherWithFavorites(weatherData)
-                CoreDataStack.shared.deleteAllWeatherData()
                 CoreDataStack.shared.saveWeatherData(updatedWeatherData)
                 completion(.success(updatedWeatherData))
             case .failure(let error):

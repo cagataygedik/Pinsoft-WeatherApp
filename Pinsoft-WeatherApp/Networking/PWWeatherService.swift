@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol WeatherServiceConformable {
-    func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], Error>) -> Void)
+    func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], PWError>) -> Void)
 }
 
 final class PWWeatherService: WeatherServiceConformable {
@@ -20,7 +20,7 @@ final class PWWeatherService: WeatherServiceConformable {
         self.APIManager = apiManager
     }
     
-    func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], Error>) -> Void) {
+    func fetchWeatherData(page: Int, completion: @escaping (Result<[Weather], PWError>) -> Void) {
         APIManager.requestWeatherData(page: page) { result in
             switch result {
             case .success(let weatherData):
@@ -32,7 +32,7 @@ final class PWWeatherService: WeatherServiceConformable {
                 if !offlineData.isEmpty {
                     completion(.success(offlineData))
                 } else {
-                    completion(.failure(error))
+                    completion(.failure(.networkError(error)))
                 }
             }
         }

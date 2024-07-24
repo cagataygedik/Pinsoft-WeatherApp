@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol NetworkServiceConformable {
-    func request<T: Decodable>(endpoint: PWEndpoint, completion: @escaping (Result<T, Error>) -> Void)
+    func request<T: Decodable>(endpoint: PWEndpoint, completion: @escaping (Result<T, PWError>) -> Void)
 }
 
 final class PWNetworkService: NetworkServiceConformable {
@@ -18,7 +18,7 @@ final class PWNetworkService: NetworkServiceConformable {
         self.baseURL = baseUrl
     }
     
-    func request<T: Decodable>(endpoint: PWEndpoint, completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(endpoint: PWEndpoint, completion: @escaping (Result<T, PWError>) -> Void) {
         let url = baseURL + endpoint.path
         
         AF.request(url, method: endpoint.method, parameters: endpoint.parameters, encoding: URLEncoding.default, headers: endpoint.headers).validate().responseDecodable(of: T.self) { response in
@@ -26,7 +26,7 @@ final class PWNetworkService: NetworkServiceConformable {
             case .success(let value):
                 completion(.success(value))
             case .failure(let error):
-                completion(.failure(error))
+                completion(.failure(.networkError(error)))
             }
         }
     }

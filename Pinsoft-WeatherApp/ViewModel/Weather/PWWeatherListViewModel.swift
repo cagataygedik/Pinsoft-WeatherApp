@@ -13,6 +13,7 @@ final class PWWeatherListViewModel {
     var filteredWeatherData: [Weather] = []
     var paginatedWeatherData: [Weather] = []
     var updateUI: (() -> Void)?
+    var showError: ((PWError) -> Void)?
     var isLoading = false
     var currentPage = 1
     private let itemsPerPage = 10
@@ -36,7 +37,7 @@ final class PWWeatherListViewModel {
                 self.paginatedWeatherData.removeAll()
                 self.loadNextPage()
             case .failure(let error):
-                print("Failed to fetch weather data: \(error)")
+                self.showError?(error)
             }
         }
     }

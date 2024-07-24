@@ -14,7 +14,7 @@ final class PWAPIManager {
         self.networkService = networkService
     }
     
-    func requestWeatherData(page: Int, completion: @escaping (Result<[Weather], Error>) -> Void) {
+    func requestWeatherData(page: Int, completion: @escaping (Result<[Weather], PWError>) -> Void) {
         let endpoint = PWEndpoint.weather(page: page)
         networkService.request(endpoint: endpoint, completion: completion)
     }

@@ -54,6 +54,7 @@
 		A28EC7A12C37D2C200DE4815 /* PWWeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */; };
 		A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */; };
 		A2A7A4182C3C03400084397F /* PWWeatherListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A7A4172C3C03400084397F /* PWWeatherListViewModelTests.swift */; };
+		A2AF994F2C50DC8C0047EC56 /* PWError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AF994E2C50DC8C0047EC56 /* PWError.swift */; };
 		A2D4B9B22C3FC25E00542A61 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D4B9B12C3FC25E00542A61 /* UIView+Extension.swift */; };
 		A2F28D922C340FF200493115 /* PWWeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */; };
 		A2F28D962C34122D00493115 /* PWFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */; };
@@ -136,6 +137,7 @@
 		A28EC7A02C37D2C200DE4815 /* PWWeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailView.swift; sourceTree = "<group>"; };
 		A28EC7A22C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherDetailViewModel.swift; sourceTree = "<group>"; };
 		A2A7A4172C3C03400084397F /* PWWeatherListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModelTests.swift; sourceTree = "<group>"; };
+		A2AF994E2C50DC8C0047EC56 /* PWError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWError.swift; sourceTree = "<group>"; };
 		A2D4B9B12C3FC25E00542A61 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		A2F28D912C340FF200493115 /* PWWeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWWeatherListViewModel.swift; sourceTree = "<group>"; };
 		A2F28D952C34122D00493115 /* PWFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWFavoritesViewModel.swift; sourceTree = "<group>"; };
@@ -367,10 +369,11 @@
 		A25F11782C33DB25000706BE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A25F118B2C33E8C5000706BE /* PWWeatherService.swift */,
 				A235AD9B2C4E4C090076A70A /* PWNetworkService.swift */,
 				A235AD9D2C4E4C580076A70A /* PWEndpoint.swift */,
 				A235AD9F2C4E4D9B0076A70A /* PWAPIManager.swift */,
+				A2AF994E2C50DC8C0047EC56 /* PWError.swift */,
+				A25F118B2C33E8C5000706BE /* PWWeatherService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				A2310CF02C369958009BFF06 /* UIImageView+Extension.swift in Sources */,
 				A25F11462C33D86D000706BE /* Pinsoft_WeatherApp.xcdatamodeld in Sources */,
 				A2310CF62C36D42C009BFF06 /* PWWeatherListView.swift in Sources */,
+				A2AF994F2C50DC8C0047EC56 /* PWError.swift in Sources */,
 				A25F118C2C33E8C5000706BE /* PWWeatherService.swift in Sources */,
 				A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */,
 				A28EC7A32C37D2DB00DE4815 /* PWWeatherDetailViewModel.swift in Sources */,

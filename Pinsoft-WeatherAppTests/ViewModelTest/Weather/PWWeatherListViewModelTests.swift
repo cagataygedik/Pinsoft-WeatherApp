@@ -9,9 +9,9 @@ import XCTest
 @testable import Pinsoft_WeatherApp
 
 final class MockWeatherService: WeatherServiceConformable {
-    var fetchWeatherDataResult: Result<[Weather], Error>?
+    var fetchWeatherDataResult: Result<[Weather], PWError>?
     
-    func fetchWeatherData(page: Int, completion: @escaping (Result<[Pinsoft_WeatherApp.Weather], any Error>) -> Void) {
+    func fetchWeatherData(page: Int, completion: @escaping (Result<[Pinsoft_WeatherApp.Weather], PWError>) -> Void) {
         if let result = fetchWeatherDataResult { completion(result) }
     }
 }
@@ -56,11 +56,20 @@ final class PWWeatherListViewModelTests: XCTestCase {
     }
     
     func testFetchWeatherFailure() {
-        let error = NSError(domain: "", code: 0, userInfo: nil)
+        let error = PWError.networkError(NSError(domain: "", code: 0, userInfo: nil))
         service.fetchWeatherDataResult = .failure(error)
         
-        sut.fetchWeather()
+        let expectation = XCTestExpectation(description: "Weather data fetch failed")
+        sut.showError = { err in
+            if case .networkError = err {
+                expectation.fulfill()
+            } else {
+                XCTFail("Expected networkError, but got \(err)")
+            }
+        }
         
+        sut.fetchWeather()
+        wait(for: [expectation], timeout: 1.0)
         XCTAssertEqual(sut.weatherData.count, 0)
         XCTAssertEqual(sut.filteredWeatherData.count, 0)
         XCTAssertEqual(sut.paginatedWeatherData.count, 0)

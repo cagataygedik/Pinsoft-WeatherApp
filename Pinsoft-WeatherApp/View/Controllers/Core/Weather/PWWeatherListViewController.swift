@@ -49,7 +49,23 @@ final class PWWeatherListViewController: UIViewController, UISearchResultsUpdati
         viewModel.updateUI = { [weak self] in
             self?.weatherListView.collectionView.reloadData()
         }
+        viewModel.showError = { [weak self] error in
+            self?.showErrorAlert(with: error)
+        }
+        
         viewModel.fetchWeather()
+    }
+    
+    private func showErrorAlert(with error: PWError) {
+        DispatchQueue.main.async {
+            let alertViewController = PWAlertViewController(title: "😭Something went wrong😭", message: error.localizedDescription)
+            alertViewController.modalPresentationStyle = .overFullScreen
+            alertViewController.modalTransitionStyle = .crossDissolve
+            alertViewController.retryAction = { [weak self] in
+                self?.viewModel.fetchWeather()
+            }
+            self.present(alertViewController, animated: true, completion: nil)
+        }
     }
     
     private func setupNotificationCenter() {

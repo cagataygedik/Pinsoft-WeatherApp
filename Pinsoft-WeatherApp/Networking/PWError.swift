@@ -16,7 +16,7 @@ enum PWError: Error {
     var localizedDescription: String {
         switch self {
         case .networkError:
-            return "There was a problem with the network. Please check your internet connection and try again."
+            return "There was a problem with the network. Please try again later."
         case .decodingError:
             return "There was a problem processing the data. Please try again later."
         case .coreDataError:

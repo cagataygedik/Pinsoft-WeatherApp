@@ -11,3 +11,4 @@ Pinsoft-WeatherApp is a project that i made during my internship, I developed pr
 - Github Actions for CI/CD
 ## Project Screenshot
  ![PWAppScreenshot](https://github.com/user-attachments/assets/6458e36b-003e-4e70-b3ba-68ca11f85d66)
+ ![WhatsApp Image 2024-07-24 at 16 51 34](https://github.com/user-attachments/assets/4f8ad447-dff0-460a-8879-b80cd559ff8d)

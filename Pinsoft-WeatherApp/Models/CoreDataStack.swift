@@ -68,7 +68,6 @@ final class CoreDataStack: CoreDataStackConformable {
                 } else {
                     entity = WeatherEntity(context: context)
                 }
-                //                let entity = WeatherEntity(context: context)
                 entity.id = Int64(weather.id)
                 entity.city = weather.city
                 entity.country = weather.country

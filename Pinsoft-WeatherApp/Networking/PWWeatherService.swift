@@ -14,7 +14,6 @@ protocol WeatherServiceConformable {
 final class PWWeatherService: WeatherServiceConformable {
     static let shared = PWWeatherService()
     private let APIManager: PWAPIManager
-//    private var currentPage = 1
     
     init(apiManager: PWAPIManager = PWAPIManager(networkService: PWNetworkService())) {
         self.APIManager = apiManager

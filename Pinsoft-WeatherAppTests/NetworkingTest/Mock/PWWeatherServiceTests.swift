@@ -34,18 +34,26 @@ final class MockNetworkService: NetworkServiceConformable {
 final class PWWeatherServiceTests: XCTestCase {
     var sut: PWWeatherService!
     var mockNetworkService: MockNetworkService!
+    var coreDataStack: CoreDataStack!
     
     override  func setUp() {
         super.setUp()
         mockNetworkService = MockNetworkService()
         let apiManager = PWAPIManager(networkService: mockNetworkService)
         sut = PWWeatherService(apiManager: apiManager)
+        coreDataStack = CoreDataStack.shared
+        clearCoreData()
     }
     
     override func tearDown() {
         sut = nil
         mockNetworkService = nil
+        clearCoreData()
         super.tearDown()
+    }
+    
+    func clearCoreData() {
+        coreDataStack.deleteAllWeatherData()
     }
     
     func testFetchWeatherDataSuccess() {
@@ -68,7 +76,6 @@ final class PWWeatherServiceTests: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    /* //TODO: MAKE THIS WORK KEEPS FAILING
     func testFetchWeatherDataFailure() {
         let mockError = PWError.networkError(AFError.explicitlyCancelled)
         mockNetworkService.result = .failure(mockError)
@@ -86,5 +93,4 @@ final class PWWeatherServiceTests: XCTestCase {
         }
         waitForExpectations(timeout: 1, handler: nil)
     }
-     */
 }

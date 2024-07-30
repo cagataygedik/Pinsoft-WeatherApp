@@ -16,7 +16,7 @@ protocol CoreDataStackConformable {
 
 final class CoreDataStack: CoreDataStackConformable {
     static let shared = CoreDataStack()
-    private init() {}
+    init() {}
     
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Pinsoft_WeatherApp")

@@ -70,7 +70,7 @@ final class PWWeatherServiceTests: XCTestCase {
                 XCTAssertEqual(weatherData.first?.city, "Burdur")
                 expectation.fulfill()
             case .failure(let failure):
-                XCTFail("Expected success but got failure")
+                XCTFail("Expected success but got \(failure)")
             }
         }
         waitForExpectations(timeout: 1, handler: nil)

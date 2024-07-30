@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Forecast: Codable {
+struct Forecast: Codable, Equatable {
     let date: String
     let temperature: Double
     let weatherDescription: String
@@ -24,5 +24,13 @@ struct Forecast: Codable {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: date)
+    }
+    
+    static func == (lhs: Forecast, rhs: Forecast) -> Bool {
+        return lhs.date == rhs.date &&
+        lhs.temperature == rhs.temperature &&
+        lhs.weatherDescription == rhs.weatherDescription &&
+        lhs.humidity == rhs.humidity &&
+        lhs.windSpeed == rhs.windSpeed
     }
 }

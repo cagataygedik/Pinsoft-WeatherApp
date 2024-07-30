@@ -10,6 +10,8 @@
 		22097CAE2F3FF69184F333CD /* Pods_Pinsoft_WeatherAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE07BB39BA0A7D0369CB9D8A /* Pods_Pinsoft_WeatherAppTests.framework */; };
 		A20CDF1F2C3EA61800CFED10 /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = A20CDF1E2C3EA61800CFED10 /* FirebaseAppDistribution-Beta */; };
 		A20CDF212C3EC0F100CFED10 /* CrashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */; };
+		A21500732C58E5300091BA86 /* CoreDataTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21500722C58E5300091BA86 /* CoreDataTestHelper.swift */; };
+		A21500752C58E6CD0091BA86 /* CoreDataStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21500742C58E6CD0091BA86 /* CoreDataStackTests.swift */; };
 		A21D2B902C357CD6001AE115 /* WeatherDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */; };
 		A21D2B942C358B86001AE115 /* PWLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B932C358B86001AE115 /* PWLabel.swift */; };
 		A21D2B972C358E19001AE115 /* PWImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D2B962C358E19001AE115 /* PWImageView.swift */; };
@@ -96,6 +98,8 @@
 		7DA49FD10A656621C13D7192 /* Pods_Pinsoft_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinsoft_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86390068224D588D99C5B2F7 /* Pods-Pinsoft-WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinsoft-WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-Pinsoft-WeatherAppTests/Pods-Pinsoft-WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A20CDF202C3EC0F100CFED10 /* CrashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashViewController.swift; sourceTree = "<group>"; };
+		A21500722C58E5300091BA86 /* CoreDataTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTestHelper.swift; sourceTree = "<group>"; };
+		A21500742C58E6CD0091BA86 /* CoreDataStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackTests.swift; sourceTree = "<group>"; };
 		A21D2B8F2C357CD6001AE115 /* WeatherDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDescription.swift; sourceTree = "<group>"; };
 		A21D2B932C358B86001AE115 /* PWLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWLabel.swift; sourceTree = "<group>"; };
 		A21D2B962C358E19001AE115 /* PWImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PWImageView.swift; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 				A27810A62C47A7BD002C7917 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A21500762C58E6D30091BA86 /* CoreDataTest */ = {
+			isa = PBXGroup;
+			children = (
+				A21500722C58E5300091BA86 /* CoreDataTestHelper.swift */,
+				A21500742C58E6CD0091BA86 /* CoreDataStackTests.swift */,
+			);
+			path = CoreDataTest;
 			sourceTree = "<group>";
 		};
 		A21D2B912C358B68001AE115 /* ReusableViews */ = {
@@ -328,6 +341,7 @@
 		A25F11542C33D86E000706BE /* Pinsoft-WeatherAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				A21500762C58E6D30091BA86 /* CoreDataTest */,
 				A24FED442C4F9F3F00B93392 /* NetworkingTest */,
 				A2A7A4192C3C0C700084397F /* ViewModelTest */,
 			);
@@ -709,6 +723,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21500732C58E5300091BA86 /* CoreDataTestHelper.swift in Sources */,
+				A21500752C58E6CD0091BA86 /* CoreDataStackTests.swift in Sources */,
 				A2A7A4182C3C03400084397F /* PWWeatherListViewModelTests.swift in Sources */,
 				A2FCE89D2C53B64900519BDD /* PWWeatherServiceTests.swift in Sources */,
 				A239339E2C3D28C8006D458C /* PWWeatherDetailViewModelTests.swift in Sources */,

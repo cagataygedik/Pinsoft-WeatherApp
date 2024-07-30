@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Weather: Codable {
+struct Weather: Codable, Equatable {
     let id: Int
     let city: String
     let country: String
@@ -53,5 +53,19 @@ struct Weather: Codable {
         windSpeed = try container.decode(Double.self, forKey: .windSpeed)
         forecast = try container.decode([Forecast].self, forKey: .forecast)
         isFavorite = false  // Initialize as false by default
+    }
+    
+    static func == (lhs: Weather, rhs: Weather) -> Bool {
+        return lhs.id == rhs.id &&
+        lhs.city == rhs.city &&
+        lhs.country == rhs.country &&
+        lhs.latitude == rhs.latitude &&
+        lhs.longitude == rhs.longitude &&
+        lhs.temperature == rhs.temperature &&
+        lhs.weatherDescription == rhs.weatherDescription &&
+        lhs.humidity == rhs.humidity &&
+        lhs.windSpeed == rhs.windSpeed &&
+        lhs.forecast == rhs.forecast &&
+        lhs.isFavorite == rhs.isFavorite
     }
 }
